@@ -1,0 +1,82 @@
+.img-container {
+  position: relative;
+  height: max-content;
+  width: 100%;
+  height: 100%;
+
+  .img-header {
+    z-index: 1;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    position: absolute;
+
+    p {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      font-weight: 900;
+      color: white;
+      margin: 1rem;
+    }
+  }
+
+  .img-board {
+    height: 100%;
+    position: relative;
+
+    .img {
+      height: 100%;
+      width: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+.section {
+  margin: 5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p.description-title {
+    margin: 2rem 0 1rem 0;
+    font-weight: 800;
+  }
+
+  .description-list p {
+    font-size: smaller;
+    text-align: center;
+  }
+}
+
+@media (min-width: 380px) {
+  .img-container .img-header p {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+}
+
+@media (min-width: 500px) {
+  .img-container .img-header p {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+}
+
+@media (min-width: 620px) {
+  .img-container .img-header p {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .img-header p {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+}

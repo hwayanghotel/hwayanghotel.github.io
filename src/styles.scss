@@ -1,11 +1,13 @@
 html,
 body {
-  div,
-  button,
-  p {
-    font-family: "Nanum Myeongjo", serif;
-    font-weight: 700;
-    word-wrap: break-word;
-    word-break: keep-all;
+    height: 100%;
+	margin: 0;
+	div,
+	button,
+	p {
+		font-family: "Nanum Myeongjo", serif;
+		font-weight: 700;
+		word-wrap: break-word;
+		word-break: keep-all;
   }
 }

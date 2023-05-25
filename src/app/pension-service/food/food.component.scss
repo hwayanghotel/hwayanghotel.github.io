@@ -1,0 +1,23 @@
+p.menu-title {
+  margin: 4rem 0 2rem 0;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+.menu-contents {
+  display: flex;
+  font-size: smaller;
+
+  .menu-list {
+    margin: 0 1rem;
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    span {
+      font-size: x-small;
+    }
+  }
+}

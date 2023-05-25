@@ -1,0 +1,52 @@
+<div class="header">
+  <a class="logo" routerLink="/home">능운대</a>
+  <ul class="list">
+    <li><a routerLink="/story">이야기</a></li>
+    <li>
+      <a (click)="showMoreService = !showMoreService">서비스</a>
+    </li>
+    <li>
+      <a
+        href="https://booking.ddnayo.com/booking-calendar-status?accommodationId=12342"
+        target="_blank"
+        >예약
+      </a>
+    </li>
+  </ul>
+  <mat-icon (click)="openMenu()">menu</mat-icon>
+</div>
+
+<div class="more" [class.active]="showMore" (click)="closeMenu()">
+  <ul class="list">
+    <li><a routerLink="/story">이야기</a></li>
+    <li>
+      <a
+        onclick="event.stopPropagation()"
+        (click)="showMoreService = !showMoreService"
+      >
+        서비스
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://booking.ddnayo.com/booking-calendar-status?accommodationId=12342"
+        target="_blank"
+        >예약
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div
+  class="more-service"
+  [class.active]="showMoreService"
+  (click)="closeMenu()"
+>
+  <ul class="list">
+    <li><a routerLink="/room">객실</a></li>
+    <li><a routerLink="/flat-bench">평상</a></li>
+    <li><a routerLink="/food">식사</a></li>
+  </ul>
+</div>
+
+<div class="dummy"></div>

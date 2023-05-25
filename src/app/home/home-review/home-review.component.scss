@@ -1,0 +1,89 @@
+@import "/src/styles.scss";
+
+div.home-review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  div.review-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      width: 100%;
+      text-align: center;
+
+      &.description {
+        font-size: large;
+        margin: 0;
+      }
+      &.visited-date {
+        margin-bottom: 2rem;
+        font-size: small;
+      }
+    }
+
+    a.img-container {
+      width: 40%;
+      display: flex;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        transition: transform 0.5s ease;
+      }
+
+      .link {
+        display: none;
+      }
+    }
+
+    a.img-container:hover {
+      img {
+        transform: scale(1.5);
+      }
+
+      p.link {
+        display: flex;
+        position: absolute;
+        width: fit-content;
+        padding: 1rem;
+        background-color: rgba(255, 255, 255, 0.5);
+        font-weight: 700;
+        text-decoration: none;
+        color: #333;
+      }
+    }
+
+    div.dots {
+      display: flex;
+      margin-top: 1rem;
+
+      div.dot {
+        width: 0.5rem;
+        height: 0.5rem;
+        margin: 0.2rem;
+        background-color: transparent;
+        border: 1px solid rgb(213, 212, 212);
+        border-radius: 100%;
+        cursor: pointer;
+
+        &.active {
+          background-color: rgb(213, 212, 212);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .img-container {
+    width: 80% !important;
+  }
+}
