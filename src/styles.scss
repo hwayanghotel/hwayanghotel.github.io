@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  div,
+  button,
+  p {
+    font-family: "Nanum Myeongjo", serif;
+    font-weight: 700;
+    word-wrap: break-word;
+    word-break: keep-all;
+  }
+}
