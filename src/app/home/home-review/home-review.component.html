@@ -1,19 +1,19 @@
-<div class="home-review">
-  <div class="review-box">
-    <p class="description">" {{ activeReview.description }} "</p>
-    <p class="visited-date">{{ activeReview.date }}</p>
-    <a class="img-container" href="{{ activeReview.href }}">
-      <img src="{{ activeReview.img }}" />
+<div class="review-container" #reviewContainer (scroll)="onScroll()">
+  <div class="review-box" *ngFor="let review of ReviewList; let index=index;" id="{{index}}">
+    <p class="description">" {{ review.description }} "</p>
+    <p class="visited-date">{{ review.date }}</p>
+    <a class="img-container" href="{{ review.href }}">
+      <img src="{{ review.img }}" />
       <p class="link">리뷰 방문하기</p>
     </a>
-
-    <div class="dots">
-      <div
-        class="dot active"
-        [class.active]="review.selected"
-        *ngFor="let review of ReviewList"
-        (click)="changeImage(review)"
-      ></div>
-    </div>
   </div>
+</div>
+
+<div class="dots">
+  <div
+    class="dot"
+    [class.active]="index === currentIndex"
+    *ngFor="let review of ReviewList; let index = index;"
+    (click)="onClickDot(index)"
+  ></div>
 </div>

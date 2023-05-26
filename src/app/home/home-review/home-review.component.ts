@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'home-review',
@@ -6,13 +6,43 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-review.component.scss'],
 })
 export class HomeReviewComponent {
+  @ViewChild('reviewContainer') reviewContainer!: ElementRef<HTMLElement>;
+
   ReviewList = ReviewList;
   activeReview = ReviewList[0];
+  currentIndex: number = 0;
 
-  changeImage(review: any) {
-    this.activeReview.selected = false;
-    review.selected = true;
-    this.activeReview = review;
+  private _changed: boolean = false;
+  private _timeoutHandle: any;
+
+  onScroll() {
+    if (!this._changed) {
+      this._changed = true;
+      clearTimeout(this._timeoutHandle);
+      this._timeoutHandle = setTimeout(() => {
+        const width = this.reviewContainer.nativeElement.scrollWidth;
+        const currentPosition = this.reviewContainer.nativeElement.scrollLeft;
+        this.currentIndex = Math.round(
+          currentPosition / (width / ReviewList.length)
+        );
+        this.reviewContainer.nativeElement.children[
+          this.currentIndex
+        ].scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+      }, 50);
+    } else {
+      this._changed = false;
+    }
+  }
+
+  onClickDot(index: number) {
+    this.reviewContainer.nativeElement.children[index].scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    });
+    this.currentIndex = index;
   }
 }
 
