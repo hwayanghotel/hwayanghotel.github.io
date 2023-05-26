@@ -50,7 +50,7 @@ const ReviewList = [
   {
     selected: true,
     href: 'https://blog.naver.com/sam_box/222827110393',
-    img: 'assets/home-review/sam_box_preview.jpg',
+    img: 'assets/home-review/sam_box_preview.jpeg',
     date: '2022.07.24 방문',
     tag: '#펜션 #평상 #백숙',
     description: '물놀이 하기 최고!',
