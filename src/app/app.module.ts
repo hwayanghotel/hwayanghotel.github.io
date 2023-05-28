@@ -16,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { StoryComponent } from './story/story.component';
 import { RoomComponent } from './pension-service/room/room.component';
+import { MoveTopIconComponent } from './move-top-icon/move-top-icon.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { RoomComponent } from './pension-service/room/room.component';
     HeaderComponent,
     StoryComponent,
     RoomComponent,
+    MoveTopIconComponent,
   ],
   imports: [
     BrowserModule,

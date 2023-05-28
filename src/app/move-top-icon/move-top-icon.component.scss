@@ -1,0 +1,12 @@
+img{
+    position: fixed;
+    bottom: 1rem;
+    width: 3rem;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
