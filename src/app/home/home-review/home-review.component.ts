@@ -17,7 +17,14 @@ export class HomeReviewComponent {
 
   constructor() {
     setInterval(() => {
-      this.showSelectedReview((this.currentIndex + 1) % ReviewList.length);
+      const boxHeight =
+        this.reviewContainer.nativeElement.getBoundingClientRect().height;
+      const boxPositionY =
+        this.reviewContainer.nativeElement.getBoundingClientRect().y;
+      const windowHeight = window.innerHeight;
+      if (boxPositionY > 0 && windowHeight - boxHeight > boxPositionY) {
+        this.showSelectedReview((this.currentIndex + 1) % ReviewList.length);
+      }
     }, 3000);
   }
 
