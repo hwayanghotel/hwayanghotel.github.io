@@ -14,6 +14,6 @@
     class="dot"
     [class.active]="index === currentIndex"
     *ngFor="let review of ReviewList; let index = index;"
-    (click)="onClickDot(index)"
+    (click)="showSelectedReview(index)"
   ></div>
 </div>

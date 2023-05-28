@@ -12,38 +12,37 @@ export class HomeReviewComponent {
   activeReview = ReviewList[0];
   currentIndex: number = 0;
 
-  private _changed: boolean = false;
+  private _alreadyChanged: boolean = false;
   private _timeoutHandle: any;
 
   constructor() {
     setInterval(() => {
-      this.onClickDot((this.currentIndex + 1) % ReviewList.length);
+      this.showSelectedReview((this.currentIndex + 1) % ReviewList.length);
     }, 3000);
   }
 
   onScroll() {
-    if (!this._changed) {
-      this._changed = true;
+    if (!this._alreadyChanged) {
+      this._alreadyChanged = true;
       clearTimeout(this._timeoutHandle);
       this._timeoutHandle = setTimeout(() => {
-        const width = this.reviewContainer.nativeElement.scrollWidth;
-        const currentPosition = this.reviewContainer.nativeElement.scrollLeft;
-        this.currentIndex = Math.round(
-          currentPosition / (width / ReviewList.length)
-        );
-        this.reviewContainer.nativeElement.children[
-          this.currentIndex
-        ].scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        });
+        this._setCurrentIndex();
+        this.showSelectedReview(this.currentIndex);
       }, 50);
     } else {
-      this._changed = false;
+      this._alreadyChanged = false;
     }
   }
 
-  onClickDot(index: number) {
+  private _setCurrentIndex() {
+    const width = this.reviewContainer.nativeElement.scrollWidth;
+    const currentPosition = this.reviewContainer.nativeElement.scrollLeft;
+    this.currentIndex = Math.round(
+      currentPosition / (width / ReviewList.length)
+    );
+  }
+
+  showSelectedReview(index: number) {
     this.reviewContainer.nativeElement.children[index].scrollIntoView({
       behavior: 'smooth',
       block: 'center',
