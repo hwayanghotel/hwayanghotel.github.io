@@ -2,16 +2,4 @@
   display: flex;
   justify-content: center;
   padding: 2rem 0;
-
-  youtube-player {
-    display: flex;
-    width: 60%;
-    justify-content: center;
-  }
-}
-
-@media only screen and (max-width: 640px) {
-  .bonus youtube-player {
-    width: 80%;
-  }
 }
