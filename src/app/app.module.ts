@@ -17,6 +17,7 @@ import { HeaderComponent } from './header/header.component';
 import { StoryComponent } from './story/story.component';
 import { RoomComponent } from './pension-service/room/room.component';
 import { MoveTopIconComponent } from './move-top-icon/move-top-icon.component';
+import { FlatBenchComponent } from './pension-service/flat-bench/flat-bench.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MoveTopIconComponent } from './move-top-icon/move-top-icon.component';
     HomeRecommendComponent,
     HomeYoutubeComponent,
     FoodComponent,
+    FlatBenchComponent,
     DividerComponent,
     FooterComponent,
     HeaderComponent,
