@@ -28,7 +28,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/robot.txt"
+              "src/robots.txt"
             ],
             "styles": [
               "src/styles.scss"
@@ -92,7 +92,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/robot.txt"
+              "src/robots.txt"
             ],
             "styles": [
               "src/styles.scss"
