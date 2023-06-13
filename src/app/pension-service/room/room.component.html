@@ -33,7 +33,7 @@
       </a>
     </div>
 
-    <img src="assets/story/pension.jpg" />
+    <img src="assets/story/pension.jpg" alt="pension"/>
   </div>
 </div>
 
@@ -61,7 +61,7 @@
       </div>
 
       <div class="img-container">
-        <img src="{{ room.activeRoom }}" />
+        <img src="{{ room.activeRoom }}" alt="active room photo"/>
 
         <div class="img-group">
           <img
@@ -69,6 +69,7 @@
             [style.width]="getImageWidth(room) + '%'"
             src="{{ imgRoom }}"
             (click)="room.activeRoom = imgRoom"
+            alt="room photos"
           />
         </div>
       </div>
