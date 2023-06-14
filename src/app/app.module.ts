@@ -18,6 +18,7 @@ import { StoryComponent } from './story/story.component';
 import { RoomComponent } from './pension-service/room/room.component';
 import { MoveTopIconComponent } from './move-top-icon/move-top-icon.component';
 import { FlatBenchComponent } from './pension-service/flat-bench/flat-bench.component';
+import { ReservationModuleModule } from 'reservation/reservation-module.module';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { FlatBenchComponent } from './pension-service/flat-bench/flat-bench.comp
     MatIconModule,
     YouTubePlayerModule,
     CommonModule,
+    ReservationModuleModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
