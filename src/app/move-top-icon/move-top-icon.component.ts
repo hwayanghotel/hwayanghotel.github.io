@@ -43,7 +43,6 @@ export class MoveTopIconComponent {
   }
 
   moveToTop() {
-    console.warn('moveToTop');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
