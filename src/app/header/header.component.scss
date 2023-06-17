@@ -83,7 +83,7 @@ div.more {
 
 div.more-service {
   @extend .more;
-  z-index: 9;
+  z-index: 10;
   &.active {
     transform: translateY(var(--height));
   }

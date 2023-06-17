@@ -6,7 +6,7 @@ import {
   Renderer2,
 } from '@angular/core';
 import { Subject } from 'rxjs';
-import { debounceTime, takeUntil } from 'rxjs/operators';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'move-top-icon',
@@ -19,19 +19,10 @@ export class MoveTopIconComponent {
   private _scrollSubject = new Subject<void>();
 
   constructor(private _renderer: Renderer2) {
-    this._scrollSubject
-      .pipe(
-        debounceTime(500)
-        // takeUntil(this.destroy$)
-      )
-      .subscribe(() => {
-        this._renderer.setStyle(this.IMG.nativeElement, 'opacity', '0');
-        this._renderer.setStyle(
-          this.IMG.nativeElement,
-          'pointer-events',
-          'none'
-        );
-      });
+    this._scrollSubject.pipe(debounceTime(500)).subscribe(() => {
+      this._renderer.setStyle(this.IMG.nativeElement, 'opacity', '0');
+      this._renderer.setStyle(this.IMG.nativeElement, 'pointer-events', 'none');
+    });
   }
 
   @HostListener('window:scroll', ['$event'])
