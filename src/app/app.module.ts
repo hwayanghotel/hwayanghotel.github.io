@@ -20,6 +20,9 @@ import { RoomComponent } from './pension-service/room/room.component';
 import { MoveTopIconComponent } from './move-top-icon/move-top-icon.component';
 import { FlatBenchComponent } from './pension-service/flat-bench/flat-bench.component';
 import { ReservationModuleModule } from 'reservation/reservation-module.module';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,8 @@ import { ReservationModuleModule } from 'reservation/reservation-module.module';
     YouTubePlayerModule,
     CommonModule,
     ReservationModuleModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
