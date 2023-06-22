@@ -8,9 +8,8 @@
 
   <div class="img-board">
     <div
-      class="img"
-      [style.background-image]="'url(assets/food/food1.jpg)'"
-    ></div>
+         class="img"
+         [style.background-image]="'url(assets/food/food1.jpg)'"></div>
   </div>
 </div>
 
@@ -32,10 +31,10 @@
       <p>자연산 버섯찌개</p>
     </div>
     <div class="menu-list" style="align-items: start">
-      <p>90,000원 <span>(4인)</span></p>
-      <p>70,000원 <span>(4인)</span></p>
-      <p>60,000원 <span>(4인)</span></p>
-      <p>40,000원 <span>(2인)</span></p>
+      <p>{{Price["능이백숙"] | number}}원 <span>(4인)</span></p>
+      <p>{{Price["백숙"] | number}}원 <span>(4인)</span></p>
+      <p>{{Price["버섯찌개"] | number}}원 <span>(4인)</span></p>
+      <p>{{Price["버섯찌개2"] | number}}원 <span>(2인)</span></p>
     </div>
   </div>
 </div>
@@ -49,9 +48,9 @@
       <p>도토리묵</p>
     </div>
     <div class="menu-list" style="align-items: start">
-      <p>30,000원</p>
-      <p>20,000원</p>
-      <p>15,000원</p>
+      <p>{{Price["더덕구이"] | number}}원</p>
+      <p>{{Price["파전"] | number}}원</p>
+      <p>{{Price["묵"] | number}}원</p>
     </div>
   </div>
 </div>
@@ -65,9 +64,9 @@
       <p>소주/맥주</p>
     </div>
     <div class="menu-list" style="align-items: start">
-      <p>10,000원</p>
-      <p>&nbsp;&nbsp;5,000원</p>
-      <p>&nbsp;&nbsp;5,000원</p>
+      <p>{{Price["동동주"] | number}}원</p>
+      <p>&nbsp;&nbsp;{{Price["막걸리"] | number}}원</p>
+      <p>&nbsp;&nbsp;{{Price["주류"] | number}}원</p>
     </div>
   </div>
 </div>
