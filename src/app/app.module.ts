@@ -19,7 +19,7 @@ import { StoryComponent } from './story/story.component';
 import { RoomComponent } from './pension-service/room/room.component';
 import { MoveTopIconComponent } from './move-top-icon/move-top-icon.component';
 import { FlatBenchComponent } from './pension-service/flat-bench/flat-bench.component';
-import { ReservationModuleModule } from 'reservation/reservation-module.module';
+import { ReservationModule } from 'reservation/reservation.module';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -48,7 +48,7 @@ import { AngularFireModule } from '@angular/fire/compat';
     MatIconModule,
     YouTubePlayerModule,
     CommonModule,
-    ReservationModuleModule,
+    ReservationModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
   ],
