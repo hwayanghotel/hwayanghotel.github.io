@@ -11,6 +11,9 @@ export class HeaderComponent {
 
   openMenu() {
     this.showMore = true;
+    setTimeout(() => {
+      this.showMore = false;
+    }, 5000);
   }
 
   closeMenu() {
