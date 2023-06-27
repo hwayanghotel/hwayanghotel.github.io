@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { SearchBookingComponent } from 'reservation/search-booking/search-booking.component';
 
 @Component({
   selector: 'header',
@@ -10,6 +12,8 @@ export class HeaderComponent {
   showDetailService: boolean = false;
   showDetailReservation: boolean = false;
   private _timeoutHandle: any;
+
+  constructor(private dialog: MatDialog) {}
 
   openMenu() {
     this.showMore = true;
@@ -41,5 +45,9 @@ export class HeaderComponent {
     this._timeoutHandle = setTimeout(() => {
       this.closeMenu();
     }, 5000);
+  }
+
+  openSerachBookingDialog() {
+    this.dialog.open(SearchBookingComponent);
   }
 }

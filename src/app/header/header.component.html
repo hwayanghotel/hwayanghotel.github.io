@@ -38,7 +38,7 @@
      (click)="closeMenu()">
   <ul class="list">
     <li><a routerLink="/reservation">실시간 예약</a></li>
-    <li><a routerLink="/reservation" [queryParams]="{step: 7}">예약 확인</a></li>
+    <li><a routerLink="/reservation" (click)="openSerachBookingDialog()">예약 확인</a></li>
   </ul>
 </div>
 
