@@ -70,6 +70,9 @@ import { ManagerCalendarComponent } from 'manager/manager-calendar/manager-calen
 import { ManagerContentFlatBenchComponent } from 'manager/manager-calendar/manager-content-flat-bench/manager-content-flat-bench.component';
 import { ManagerContentFoodComponent } from 'manager/manager-calendar/manager-content-food/manager-content-food.component';
 import { ManagerTableComponent } from 'manager/manager-table/manager-table.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { ManagerService } from 'manager/manager.service';
 
 @NgModule({
   declarations: [
@@ -135,12 +138,15 @@ import { ManagerTableComponent } from 'manager/manager-table/manager-table.compo
     MatCheckboxModule,
     ReactiveFormsModule,
     forwardRef(() => FormFieldCustomControlExample),
+    MatCardModule,
+    MatMenuModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     HolidayService,
     DBService,
     ReservationService,
+    ManagerService,
     DatePipe,
     {
       provide: DateAdapter,
