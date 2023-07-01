@@ -25,15 +25,18 @@
       <p class="link" (click)="scrollTo('guide')">
         >&nbsp;&nbsp;예약 및 이용안내
       </p>
+      <!-- <a
+         class="link"
+         href="https://booking.ddnayo.com/booking-calendar-status?accommodationId=12342"
+         target="_blank">>&nbsp;&nbsp;객실 예약하기
+      </a> -->
       <a
-        class="link"
-        href="https://booking.ddnayo.com/booking-calendar-status?accommodationId=12342"
-        target="_blank"
-        >>&nbsp;&nbsp;객실 예약하기
+         class="link"
+         routerLink="/reservation">>&nbsp;&nbsp;객실 예약하기
       </a>
     </div>
 
-    <img src="assets/story/pension.jpg" alt="pension"/>
+    <img src="assets/story/pension.jpg" alt="pension" />
   </div>
 </div>
 
@@ -53,24 +56,21 @@
           >&nbsp;&nbsp;예약 및 이용안내
         </p>
         <a
-          class="link"
-          href="https://booking.ddnayo.com/booking-calendar-status?accommodationId=12342"
-          target="_blank"
-          >>&nbsp;&nbsp;객실 예약하기
+           class="link"
+           routerLink="/reservation">>&nbsp;&nbsp;객실 예약하기
         </a>
       </div>
 
       <div class="img-container">
-        <img src="{{ room.activeRoom }}" alt="active room photo"/>
+        <img src="{{ room.activeRoom }}" alt="active room photo" />
 
         <div class="img-group">
           <img
-            *ngFor="let imgRoom of room.rooms"
-            [style.width]="getImageWidth(room) + '%'"
-            src="{{ imgRoom }}"
-            (click)="room.activeRoom = imgRoom"
-            alt="room photos"
-          />
+               *ngFor="let imgRoom of room.rooms"
+               [style.width]="getImageWidth(room) + '%'"
+               src="{{ imgRoom }}"
+               (click)="room.activeRoom = imgRoom"
+               alt="room photos" />
         </div>
       </div>
     </div>
@@ -109,10 +109,8 @@
       <br />
       <br />
       <a
-        class="link"
-        href="https://booking.ddnayo.com/booking-calendar-status?accommodationId=12342"
-        target="_blank"
-        >>&nbsp;&nbsp;객실 예약하기
+         class="link"
+         routerLink="/reservation">>&nbsp;&nbsp;객실 예약하기
       </a>
     </div>
   </div>

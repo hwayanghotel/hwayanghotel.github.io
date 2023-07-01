@@ -1,22 +1,30 @@
 div.dots {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  position: absolute;
-  bottom: 1rem;
-  opacity: 0.7;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	position: absolute;
+	bottom: 1rem;
+	opacity: 0.7;
 
-  div.dot {
-    height: 0.5rem;
-    width: 0.5rem;
-    background-color: rgb(213, 212, 212);
-    margin: 0 0.5rem;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+	div.dot {
+		height: 0.5rem;
+		width: 0.5rem;
+		background-color: rgb(213, 212, 212);
+		margin: 0 0.5rem;
+		border-radius: 50%;
+		cursor: pointer;
+		transition: all 0.3s ease-in-out;
 
-    &.active {
-      transform: scale(1.5);
-    }
-  }
+		&.active {
+			transform: scale(1.5);
+		}
+	}
+}
+
+a {
+	margin-top: 2rem;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	color: black;
 }
