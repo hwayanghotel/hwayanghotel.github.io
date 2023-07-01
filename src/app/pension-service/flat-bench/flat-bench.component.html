@@ -1,76 +1,83 @@
 <div class="img-container">
-  <div class="img-header">
-    <p>평상엔 눕고</p>
-    <p>불판엔 굽고</p>
-    <p>계곡엔 고고</p>
-  </div>
-  <div class="img-board">
-    <div
-      class="img"
-      [style.background-image]="'url(' + images[currentIndex] + ')'"
-    ></div>
-  </div>
-  <div class="dots">
-    <div
-      *ngFor="let image of images; let i = index"
-      class="dot"
-      [class.active] = "i==currentIndex"
-      (click)="currentIndex = i"
-    ></div>
-  </div>
+	<div class="img-header">
+		<p>평상엔 눕고</p>
+		<p>불판엔 굽고</p>
+		<p>계곡엔 고고</p>
+	</div>
+	<div class="img-board">
+		<div
+			 class="img"
+			 [style.background-image]="'url(' + images[currentIndex] + ')'"></div>
+	</div>
+	<div class="dots">
+		<div
+			 *ngFor="let image of images; let i = index"
+			 class="dot"
+			 [class.active]="i==currentIndex"
+			 (click)="currentIndex = i"></div>
+	</div>
 </div>
 
 <div class="section">
-  <p class="description-title">능운대 평상 대여 안내</p>
-  <div class="description-list">
-    <p>계곡을 즐기기 위한 모든 것들을 제공하며, 취사가 가능합니다.</p>
-    <p>(샤워실, 화장실, 선풍기, 취사시설 등)</p>
-  </div>
+	<p class="description-title">능운대 평상 대여 안내</p>
+	<div class="description-list">
+		<p>계곡을 즐기기 위한 모든 것들을 제공하며, 취사가 가능합니다.</p>
+		<p>(샤워실, 화장실, 선풍기, 취사시설 등)</p>
+	</div>
 </div>
 
 <div class="section">
-  <p class="description-title">운영시간</p>
-  <div class="description-list">
-    <p>오전 9시 ~ 오후 5시</p>
-  </div>
+	<p class="description-title">운영시간</p>
+	<div class="description-list">
+		<p>오전 9시 ~ 오후 5시</p>
+	</div>
 </div>
 
 <div class="section">
-  <p class="description-title">대여비</p>
-  <div class="description-list">
-    <p>50,000원 (4인 기준)</p>
-    <p>※ 1인 추가 시 10,000원 별도</p>
-    <p>※ 평상 당 최대 인원은 6명입니다.</p>
-  </div>
+	<p class="description-title">평상 설명(평상 타입)</p>
+	<div class="description-list">
+		<p>- 자리에 누울 수 있는 평상형 - </p>
+		<p>가격: 50,000원 (4인 기준)</p>
+		<p>※ 1인 추가 시 10,000원 별도</p>
+		<p>※ 평상 당 최대 인원은 6명입니다.</p>
+	</div>
 </div>
 
 <div class="section">
-  <p class="description-title">안내 사항</p>
-  <div class="description-list">
-    <p>※ 평상 예약 시, 화양 공원 내 차량 등록 도와드립니다.</p>
-    <p>※ 불판+가스레인지 대여비는 10,000원이며, 가져오셔도 됩니다.</p>
-    <p>※ 이용금액의 100%가 입금 되어야 예약이 완료됩니다.</p>
-    <p>
-      ※ 예약 후 12시간 안에 입금 확인 되지 않을 시 통보 없이 취소 처리될 수
-      있습니다.
-    </p>
-    <p>
-      ※
-      <span [style.text-decoration]="'underline'">
-        평상 서비스는 예약 취소 시 환불이 어렵습니다.
-      </span>
-    </p>
-    <br />
-    <p
-      [style.background-color]="'rgb(213, 212, 212)'"
-      [style.line-height]="'1.2rem'"
-    >
-      <br />
-      능운대 평상은 소수의 고객들께만 제공드리는 소중한 서비스입니다.<br />
-      ​많은 고객들께 남은 평상이 없어 죄송하단 말씀을 드리고 있습니다. ​<br />
-      위와 같은 이유로 평상 서비스는 예약 취소 시, 환불이 어렵습니다.<br />
-      예약 시 신중하게 고민 부탁드립니다. <br />
-      <br />
-    </p>
-  </div>
+	<p class="description-title">데크 설명(테이블 타입)</p>
+	<div class="description-list">
+		<p>- 4인용 입식형 테이블 (상단 3번째 사진)- </p>
+		<p>가격: 40,000원</p>
+		<p>※ 데크 당 4인까지 이용 가능합니다.</p>
+	</div>
+</div>
+
+<div class="section">
+	<p class="description-title">안내 사항</p>
+	<div class="description-list">
+		<p>※ 평상/데크 예약 시, 화양 공원 내 차량 등록 도와드립니다.</p>
+		<p>※ 불판+가스레인지 대여비는 10,000원이며, 가져오셔도 됩니다.</p>
+		<p>※ 이용금액의 100%가 입금 되어야 예약이 완료됩니다.</p>
+		<p>
+			※ 예약 후 12시간 안에 입금 확인 되지 않을 시 통보 없이 취소 처리될 수
+			있습니다.
+		</p>
+		<p>
+			※
+			<span [style.text-decoration]="'underline'">
+				평상 서비스는 예약 취소 시 환불이 어렵습니다.
+			</span>
+		</p>
+		<br />
+		<p
+		   [style.background-color]="'rgb(213, 212, 212)'"
+		   [style.line-height]="'1.2rem'">
+			<br />
+			능운대 평상은 소수의 고객들께만 제공드리는 소중한 서비스입니다.<br />
+			​많은 고객들께 남은 평상이 없어 죄송하단 말씀을 드리고 있습니다. ​<br />
+			위와 같은 이유로 평상 서비스는 예약 취소 시, 환불이 어렵습니다.<br />
+			예약 시 신중하게 고민 부탁드립니다. <br />
+			<br />
+		</p>
+	</div>
 </div>
