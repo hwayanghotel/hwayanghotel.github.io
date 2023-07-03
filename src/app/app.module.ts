@@ -49,7 +49,6 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { FormFieldCustomControlExample } from 'reservation/reservation-dialog/form-field-custom-control-example/form-field-custom-control-example.component';
 import { ReservationComponent } from 'reservation/reservation/reservation.component';
 import { CalendarComponent } from 'reservation/calendar/calendar.component';
 import { ContentFoodComponent } from 'reservation/calendar/content-food/content-food.component';
@@ -137,7 +136,6 @@ import { ManagerService } from 'manager/manager.service';
     MatNativeDateModule,
     MatCheckboxModule,
     ReactiveFormsModule,
-    forwardRef(() => FormFieldCustomControlExample),
     MatCardModule,
     MatMenuModule,
   ],
