@@ -72,6 +72,7 @@ import { ManagerTableComponent } from 'manager/manager-table/manager-table.compo
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { ManagerService } from 'manager/manager.service';
+import { UploaderService } from 'reservation/service/uploader.service';
 
 @NgModule({
   declarations: [
@@ -145,6 +146,7 @@ import { ManagerService } from 'manager/manager.service';
     DBService,
     ReservationService,
     ManagerService,
+    UploaderService,
     DatePipe,
     {
       provide: DateAdapter,
