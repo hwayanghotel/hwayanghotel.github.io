@@ -51,8 +51,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ReservationComponent } from 'reservation/reservation/reservation.component';
 import { CalendarComponent } from 'reservation/calendar/calendar.component';
-import { ContentFoodComponent } from 'reservation/calendar/content-food/content-food.component';
-import { ContentFlatBenchComponent } from 'reservation/calendar/content-flat-bench/content-flat-bench.component';
 import { ReservationDialogComponent } from 'reservation/reservation-dialog/reservation-dialog.component';
 import { DialogForTypeAndDateComponent } from 'reservation/reservation-dialog/dialog-for-type-and-date/dialog-for-type-and-date.component';
 import { DialogForCustomerInfoComponent } from 'reservation/reservation-dialog/dialog-for-customer-info/dialog-for-customer-info.component';
@@ -66,8 +64,6 @@ import { InputInfoDialogComponent } from 'reservation/search-booking/input-info-
 import { BookingListDialogComponent } from 'reservation/search-booking/booking-list-dialog/booking-list-dialog.component';
 import { ManagerComponent } from 'manager/manager/manager.component';
 import { ManagerCalendarComponent } from 'manager/manager-calendar/manager-calendar.component';
-import { ManagerContentFlatBenchComponent } from 'manager/manager-calendar/manager-content-flat-bench/manager-content-flat-bench.component';
-import { ManagerContentFoodComponent } from 'manager/manager-calendar/manager-content-food/manager-content-food.component';
 import { ManagerTableComponent } from 'manager/manager-table/manager-table.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
@@ -92,8 +88,6 @@ import { UploaderService } from 'reservation/service/uploader.service';
     MoveTopIconComponent,
     ReservationComponent,
     CalendarComponent,
-    ContentFoodComponent,
-    ContentFlatBenchComponent,
     ReservationDialogComponent,
     DialogForTypeAndDateComponent,
     DialogForCustomerInfoComponent,
@@ -107,8 +101,6 @@ import { UploaderService } from 'reservation/service/uploader.service';
     BookingListDialogComponent,
     ManagerComponent,
     ManagerCalendarComponent,
-    ManagerContentFlatBenchComponent,
-    ManagerContentFoodComponent,
     ManagerTableComponent,
   ],
   imports: [
