@@ -142,11 +142,11 @@ import { UploaderService } from 'reservation/service/uploader.service';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
+    UploaderService,
     HolidayService,
     DBService,
     ReservationService,
     ManagerService,
-    UploaderService,
     DatePipe,
     {
       provide: DateAdapter,
