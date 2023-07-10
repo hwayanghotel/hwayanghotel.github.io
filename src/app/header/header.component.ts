@@ -48,7 +48,6 @@ export class HeaderComponent {
   }
 
   openSerachBookingDialog() {
-    // [Open 준비 중]
-    // this.dialog.open(SearchBookingComponent);
+    this.dialog.open(SearchBookingComponent);
   }
 }
