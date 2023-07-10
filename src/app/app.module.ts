@@ -69,6 +69,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { ManagerService } from 'manager/manager.service';
 import { UploaderService } from 'reservation/service/uploader.service';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 @NgModule({
   declarations: [
@@ -112,6 +113,7 @@ import { UploaderService } from 'reservation/service/uploader.service';
     CommonModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAuthModule,
     HttpClientModule,
     MatDialogModule,
     FormsModule,
