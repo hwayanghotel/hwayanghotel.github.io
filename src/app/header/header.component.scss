@@ -44,6 +44,9 @@ a {
 	font-weight: 700;
 	text-decoration: none;
 	color: #333;
+	height: var(--height);
+	display: flex;
+	align-items: center;
 }
 
 a:hover {
@@ -80,7 +83,8 @@ div.more {
 		width: auto;
 
 		a {
-			margin: 0 2rem;
+			margin: 0;
+			padding: 0 2rem;
 		}
 	}
 }
