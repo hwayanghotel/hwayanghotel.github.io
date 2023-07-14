@@ -62,7 +62,11 @@
 			</div>
 
 			<div class="img-container">
-				<img src="{{ room.activeRoom }}" alt="active room photo" />
+				<img (touchstart)="onTouchStart($event)"
+					 (touchmove)="onTouchMove($event)"
+					 (touchend)="onTouchEnd($event, room)"
+					 src="{{ room.activeRoom }}"
+					 alt="active room photo" />
 
 				<div class="img-group">
 					<img
