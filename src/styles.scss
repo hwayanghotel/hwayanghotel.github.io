@@ -1,12 +1,17 @@
-html, body { height: 100%; }
-body{
+html,
+body {
+	height: 100%;
+}
+
+body {
 	margin: 0;
+
 	div,
 	button,
 	p {
-		font-family: "Nanum Myeongjo", Roboto, "Helvetica Neue", sans-serif;;
+		font-family: "Nanum Myeongjo", Roboto, "Helvetica Neue", sans-serif;
 		font-weight: 700;
 		word-wrap: break-word;
 		word-break: keep-all;
-  }
+	}
 }

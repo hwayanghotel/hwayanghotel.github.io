@@ -20,11 +20,6 @@ img {
 
     .head-line {
         margin: 2rem 0 1rem 0;
-
-        h2 {
-            font-weight: 700;
-            margin: 0;
-        }
     }
 
     .card-list {
@@ -43,4 +38,16 @@ img {
 
         }
     }
+}
+
+
+h2 {
+    font-weight: 700 !important;
+}
+
+h2,
+p {
+    font-family: sans-serif;
+    margin: 0;
+    font-weight: 500;
 }
