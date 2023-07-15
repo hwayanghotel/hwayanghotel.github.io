@@ -7,19 +7,19 @@
 	</div>
 
 	<div class="card-list">
-		<mat-card matRipple>
+		<mat-card matRipple (click)="openBookingPension()">
 			<mat-card-header>
 				<mat-card-title>펜션 예약하기</mat-card-title>
 			</mat-card-header>
 		</mat-card>
 
-		<mat-card matRipple>
+		<mat-card matRipple routerLink="/reservation" [queryParams]="{type:'평상'}">
 			<mat-card-header>
 				<mat-card-title>평상 예약하기</mat-card-title>
 			</mat-card-header>
 		</mat-card>
 
-		<mat-card matRipple>
+		<mat-card matRipple routerLink="/reservation">
 			<mat-card-header>
 				<mat-card-title>식사 예약하기</mat-card-title>
 			</mat-card-header>
