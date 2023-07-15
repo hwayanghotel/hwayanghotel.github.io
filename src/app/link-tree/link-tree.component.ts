@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class LinkTreeComponent {
     constructor() {}
+
+    openBookingPension() {
+        window.open(
+            'https://booking.ddnayo.com/booking-calendar-status?accommodationId=12342'
+        );
+    }
 }
