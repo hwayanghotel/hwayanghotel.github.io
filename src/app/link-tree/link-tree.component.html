@@ -3,25 +3,25 @@
 <div class="content">
 	<div class="head-line">
 		<h2>능운대펜션</h2>
-		<h4>먹고, 자고, 놀고 가유</h4>
+		<p>먹고, 자고, 놀고 가유</p>
 	</div>
 
 	<div class="card-list">
 		<mat-card matRipple (click)="openBookingPension()">
 			<mat-card-header>
-				<mat-card-title>펜션 예약하기</mat-card-title>
+				<p>펜션 예약하기</p>
 			</mat-card-header>
 		</mat-card>
 
 		<mat-card matRipple routerLink="/reservation" [queryParams]="{type:'평상'}">
 			<mat-card-header>
-				<mat-card-title>평상 예약하기</mat-card-title>
+				<p>평상 예약하기</p>
 			</mat-card-header>
 		</mat-card>
 
 		<mat-card matRipple routerLink="/reservation">
 			<mat-card-header>
-				<mat-card-title>식사 예약하기</mat-card-title>
+				<p>식사 예약하기</p>
 			</mat-card-header>
 		</mat-card>
 	</div>
