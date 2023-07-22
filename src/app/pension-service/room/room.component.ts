@@ -43,7 +43,6 @@ export class RoomComponent {
     private _timeoutHandle: any;
 
     private detectTouchDirection(room: IRoom) {
-        console.warn('touch', room);
         let selectedRoom: IRoom = this.roomInfo.filter(
             (v) => room.id === v.id
         )[0];
