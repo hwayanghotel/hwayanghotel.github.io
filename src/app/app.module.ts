@@ -72,6 +72,7 @@ import { ManagerService } from 'manager/manager.service';
 import { UploaderService } from 'reservation/service/uploader.service';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { LinkTreeComponent } from './link-tree/link-tree.component';
+import { ManagerWeeklyCalendarComponent } from 'manager/manager-weekly-calendar/manager-weekly-calendar.component';
 
 @NgModule({
     declarations: [
@@ -105,6 +106,7 @@ import { LinkTreeComponent } from './link-tree/link-tree.component';
         ManagerComponent,
         ManagerCalendarComponent,
         ManagerTableComponent,
+        ManagerWeeklyCalendarComponent,
         LinkTreeComponent,
     ],
     imports: [
