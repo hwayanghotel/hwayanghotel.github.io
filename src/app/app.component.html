@@ -1,4 +1,4 @@
-<header></header>
+<header *ngIf="!isManagerPage"></header>
 <router-outlet></router-outlet>
-<footer></footer>
-<move-top-icon></move-top-icon>
+<footer *ngIf="!isManagerPage"></footer>
+<move-top-icon *ngIf="!isManagerPage"></move-top-icon>
