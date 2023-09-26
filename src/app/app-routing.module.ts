@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FlatBenchComponent } from './pension-service/flat-bench/flat-bench.component';
-import { FoodComponent } from './pension-service/food/food.component';
+import { FlatBenchComponent } from './flat-bench/flat-bench.component';
+import { FoodComponent } from './food/food.component';
 import { HomeComponent } from './home/home.component';
 import { StoryComponent } from './story/story.component';
-import { RoomComponent } from './pension-service/room/room.component';
+import { RoomComponent } from './room/room.component';
 import { ManagerComponent } from 'manager/manager/manager.component';
 import { ReservationComponent } from 'reservation/reservation/reservation.component';
 import { LinkTreeComponent } from './link-tree/link-tree.component';
