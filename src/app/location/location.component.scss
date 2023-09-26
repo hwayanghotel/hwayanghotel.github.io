@@ -1,0 +1,43 @@
+h2 {
+    margin-top: 3rem !important;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+#map {
+    height: 30%;
+}
+
+h2,
+p {
+    margin: 1rem;
+    font-family: "Nanum Myeongjo", Roboto, "Helvetica Neue", sans-serif;
+    animation: slide-up 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    #map {
+        margin: 0 25%;
+        width: 50%;
+        height: 50%;
+    }
+
+    h2,
+    p {
+        margin: 1rem 25%;
+        text-align: center;
+    }
+}
