@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 @Component({
     selector: 'flat-bench',
@@ -6,6 +6,9 @@ import { Component, HostListener } from '@angular/core';
     styleUrls: ['./flat-bench.component.scss', '../pension-service.scss'],
 })
 export class FlatBenchComponent {
+    @ViewChild('MainImageArea') MainImageArea!: ElementRef<HTMLElement>;
+
+    color: string = 'white';
     currentIndex: number = 0;
     images: string[] = [
         'assets/flat-bench/flat-bench1.jpg',
@@ -14,37 +17,36 @@ export class FlatBenchComponent {
         'assets/flat-bench/flat-bench4.jpg',
     ];
 
-    private touchStartX: number;
-    private touchEndX: number;
-
-    @HostListener('touchstart', ['$event'])
-    onTouchStart(event: TouchEvent) {
-        this.touchStartX = event.touches[0].clientX;
+    showSelectedImage(index: number) {
+        this.MainImageArea.nativeElement.children[index].scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+        });
+        this.currentIndex = index;
     }
 
-    @HostListener('touchmove', ['$event'])
-    onTouchMove(event: TouchEvent) {
-        this.touchEndX = event.touches[0].clientX;
+    @HostListener('window:scroll', ['$event'])
+    onScroll(event: Event): void {
+        this.color = window.scrollY > window.innerHeight ? 'black' : 'white';
     }
 
-    @HostListener('touchend', ['$event'])
-    onTouchEnd(event: TouchEvent) {
-        clearTimeout(this._timeoutHandle);
-        this._timeoutHandle = setTimeout(() => {
-            this.detectTouchDirection();
-        }, 200);
-    }
-    private _timeoutHandle: any;
-
-    private detectTouchDirection() {
-        if (this.touchStartX + 30 < this.touchEndX) {
-            this.currentIndex =
-                this.currentIndex === 0
-                    ? this.images.length - 1
-                    : this.currentIndex - 1;
-        } else if (this.touchStartX > this.touchEndX + 30) {
-            this.currentIndex++;
-            this.currentIndex %= this.images.length;
+    onScrollMainImageArea() {
+        if (!this._alreadyScrolled) {
+            this._alreadyScrolled = true;
+            clearTimeout(this._timeoutHandle);
+            this._timeoutHandle = setTimeout(() => {
+                const width =
+                    this.MainImageArea.nativeElement.scrollWidth /
+                    this.images.length;
+                const currentPosition =
+                    this.MainImageArea.nativeElement.scrollLeft;
+                const currentIndex = Math.round(currentPosition / width);
+                this.currentIndex = currentIndex;
+            }, 50);
+        } else {
+            this._alreadyScrolled = false;
         }
     }
+    private _timeoutHandle: any;
+    private _alreadyScrolled: boolean = false;
 }
