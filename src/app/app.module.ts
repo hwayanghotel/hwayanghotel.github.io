@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HomeVideoComponent } from './home/home-video/home-video.component';
 import { HomeReviewComponent } from './home/home-review/home-review.component';
-import { HomeRecommendComponent } from './home/home-recommend/home-recommend.component';
 import { FoodComponent } from './pension-service/food/food.component';
 import { DividerComponent } from './divider/divider.component';
 import { HomeYoutubeComponent } from './home/home-youtube/home-youtube.component';
@@ -73,6 +72,9 @@ import { UploaderService } from 'reservation/service/uploader.service';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { LinkTreeComponent } from './link-tree/link-tree.component';
 import { ManagerWeeklyCalendarComponent } from 'manager/manager-weekly-calendar/manager-weekly-calendar.component';
+import { LandingComponent } from './landing/mobile/landing.component';
+import { MenuComponent } from './menu/menu.component';
+import { LocationComponent } from './location/location.component';
 
 @NgModule({
     declarations: [
@@ -80,7 +82,6 @@ import { ManagerWeeklyCalendarComponent } from 'manager/manager-weekly-calendar/
         HomeComponent,
         HomeVideoComponent,
         HomeReviewComponent,
-        HomeRecommendComponent,
         HomeYoutubeComponent,
         FoodComponent,
         FlatBenchComponent,
@@ -108,6 +109,9 @@ import { ManagerWeeklyCalendarComponent } from 'manager/manager-weekly-calendar/
         ManagerTableComponent,
         ManagerWeeklyCalendarComponent,
         LinkTreeComponent,
+        LandingComponent,
+        MenuComponent,
+        LocationComponent,
     ],
     imports: [
         BrowserModule,

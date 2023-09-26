@@ -8,9 +8,12 @@ import { RoomComponent } from './pension-service/room/room.component';
 import { ManagerComponent } from 'manager/manager/manager.component';
 import { ReservationComponent } from 'reservation/reservation/reservation.component';
 import { LinkTreeComponent } from './link-tree/link-tree.component';
+import { LandingComponent } from './landing/mobile/landing.component';
+import { LocationComponent } from './location/location.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '', redirectTo: 'landing', pathMatch: 'full' },
+    { path: 'landing', component: LandingComponent },
     { path: 'home', component: HomeComponent },
     { path: 'food', component: FoodComponent },
     { path: 'flat-bench', component: FlatBenchComponent },
@@ -19,6 +22,7 @@ const routes: Routes = [
     { path: 'reservation', component: ReservationComponent },
     { path: 'manager', component: ManagerComponent },
     { path: 'link-tree', component: LinkTreeComponent },
+    { path: 'location', component: LocationComponent },
 ];
 
 @NgModule({
