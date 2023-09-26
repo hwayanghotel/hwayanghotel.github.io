@@ -1,3 +1,11 @@
+<menu [color]="color"></menu>
+<img class="room-main" src="assets/room/room_main.jpg" alt="pension room" />
+<div class="room-main-text">
+	<h1>잘자유</h1>
+	<h1>계곡 소리<br>새 소리<br>달빛<br>산</h1>
+	<h5>-능운대펜션-</h5>
+</div>
+
 <div class="container first-container">
 	<p class="title">객실.</p>
 	<div class="content">
@@ -5,35 +13,53 @@
 			<p class="main-text">
 				독채 펜션<br />총 4개 객실을 운영합니다.<br /><br />
 			</p>
-			<p class="link" (click)="scrollTo('room1')">
+			<button mat-stroked-button>
+				<p (click)="scrollTo('room1')">
+					능운대 <span class="smaller">(최소 4인, 최대 6인)</span>
+				</p>
+			</button>
+			<button mat-stroked-button>
+				<p (click)="scrollTo('room2')">
+					학소대 <span class="smaller">(최소 4인, 최대 5인)</span>
+				</p>
+			</button>
+			<button mat-stroked-button>
+				<p (click)="scrollTo('room3')">
+					와룡암 <span class="smaller">(최소 3인, 최대 4인)</span>
+				</p>
+			</button>
+			<button mat-stroked-button>
+				<p (click)="scrollTo('room4')">
+					첨성대 <span class="smaller">(최소 2인, 최대 4인)</span>
+				</p>
+			</button>
+			<p class="link pc" (click)="scrollTo('room1')">
 				능운대 <span class="smaller">(최소 4인, 최대 6인)</span>
 				&nbsp;&nbsp;>&nbsp;&nbsp;자세히 보기
 			</p>
-			<p class="link" (click)="scrollTo('room2')">
+			<p class="link pc" (click)="scrollTo('room2')">
 				학소대 <span class="smaller">(최소 4인, 최대 5인)</span>
 				&nbsp;&nbsp;>&nbsp;&nbsp;자세히 보기
 			</p>
-			<p class="link" (click)="scrollTo('room3')">
+			<p class="link pc" (click)="scrollTo('room3')">
 				와룡암 <span class="smaller">(최소 3인, 최대 4인)</span>
 				&nbsp;&nbsp;>&nbsp;&nbsp;자세히 보기
 			</p>
-			<p class="link" (click)="scrollTo('room4')">
+			<p class="link pc" (click)="scrollTo('room4')">
 				첨성대 <span class="smaller">(최소 2인, 최대 4인)</span>
 				&nbsp;&nbsp;>&nbsp;&nbsp;자세히 보기
 			</p>
 			<br />
-			<p class="link" (click)="scrollTo('guide')">
-				>&nbsp;&nbsp;예약 및 이용안내
-			</p>
-			<!-- <a
-         class="link"
-         href="https://booking.ddnayo.com/booking-calendar-status?accommodationId=12342"
-         target="_blank">>&nbsp;&nbsp;객실 예약하기
-      </a> -->
-			<a
-			   class="link"
-			   routerLink="/reservation">>&nbsp;&nbsp;객실 예약하기
-			</a>
+			<div class="guide-box">
+				<div>
+					<p class="link" (click)="scrollTo('guide')">
+						>&nbsp;&nbsp;예약 및 이용안내
+					</p>
+					<a href="https://booking.ddnayo.com/booking-calendar-status?accommodationId=12342"
+					   class="link" target="_blank">>&nbsp;&nbsp;객실 예약하기
+					</a>
+				</div>
+			</div>
 		</div>
 
 		<img src="assets/story/pension.jpg" alt="pension" />
@@ -110,13 +136,8 @@
 				- 이용일 4,3일 전 취소 및 변경: 사용 요금의 30% 환불<br />
 				- 이용일 2일 이내 취소 및 변경: 환불 불가<br />
 			</p>
-			<br />
-			<br />
-			<br />
-			<a
-			   class="link"
-			   routerLink="/reservation">>&nbsp;&nbsp;객실 예약하기
-			</a>
 		</div>
 	</div>
 </div>
+<footer></footer>
+<move-top-icon></move-top-icon>

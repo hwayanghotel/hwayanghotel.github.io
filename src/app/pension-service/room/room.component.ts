@@ -17,6 +17,7 @@ interface IRoom {
 })
 export class RoomComponent {
     roomInfo = roomInfo;
+    color = "white";
 
     private touchStartX: number;
     private touchEndX: number;
@@ -76,6 +77,11 @@ export class RoomComponent {
                 behavior: 'smooth',
             });
         }
+    }
+
+    @HostListener('window:scroll', ['$event'])
+    onScroll(event: Event): void {
+        this.color = window.scrollY > window.innerHeight ? 'black' : 'white';
     }
 }
 
@@ -154,5 +160,5 @@ const roomInfo: IRoom[] = [
             'assets/room/bathroom2.jpg',
             'assets/room/bathroom3.jpg',
         ],
-    },
+    }
 ];
