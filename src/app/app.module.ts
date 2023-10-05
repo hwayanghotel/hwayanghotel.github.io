@@ -1,10 +1,15 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonModule, DatePipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { MatIconModule } from '@angular/material/icon';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //DELETE?
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+// APP
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HomeVideoComponent } from './home/home-video/home-video.component';
@@ -19,36 +24,12 @@ import { RoomComponent } from './room/room.component';
 import { MoveTopIconComponent } from './move-top-icon/move-top-icon.component';
 import { FlatBenchComponent } from './flat-bench/flat-bench.component';
 import { environment } from '../environments/environment';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFireModule } from '@angular/fire/compat';
-import { HolidayService } from 'reservation/service/holiday.service';
-import { DBService } from 'reservation/service/DB.service';
-import { ReservationService } from 'reservation/service/reservation.service';
-import {
-    DateAdapter,
-    MAT_DATE_FORMATS,
-    MAT_DATE_LOCALE,
-    MatNativeDateModule,
-} from '@angular/material/core';
-import {
-    MAT_MOMENT_DATE_ADAPTER_OPTIONS,
-    MomentDateAdapter,
-} from '@angular/material-moment-adapter';
-import { HttpClientModule } from '@angular/common/http';
-import { MatDialogModule } from '@angular/material/dialog';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatTableModule } from '@angular/material/table';
-import { MatSortModule } from '@angular/material/sort';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatSelectModule } from '@angular/material/select';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatRippleModule } from '@angular/material/core';
+import { LinkTreeComponent } from './link-tree/link-tree.component';
+import { LandingComponent } from './landing/landing.component';
+import { MenuComponent } from './menu/menu.component';
+import { LocationComponent } from './location/location.component';
+
+// RESERVATION
 import { ReservationComponent } from 'reservation/reservation/reservation.component';
 import { CalendarComponent } from 'reservation/calendar/calendar.component';
 import { ReservationDialogComponent } from 'reservation/reservation-dialog/reservation-dialog.component';
@@ -62,87 +43,102 @@ import { DialogReservationCancelComponent } from 'reservation/reservation-dialog
 import { SearchBookingComponent } from 'reservation/search-booking/search-booking.component';
 import { InputInfoDialogComponent } from 'reservation/search-booking/input-info-dialog/input-info-dialog.component';
 import { BookingListDialogComponent } from 'reservation/search-booking/booking-list-dialog/booking-list-dialog.component';
+import { HolidayService } from 'reservation/service/holiday.service';
+import { DBService } from 'reservation/service/DB.service';
+import { ReservationService } from 'reservation/service/reservation.service';
+import { UploaderService } from 'reservation/service/uploader.service';
+//BOOKING
+import { BookingComponent } from 'reservation/booking/booking.component';
+import { BookingFlatTableComponent } from 'reservation/booking/booking-flat-table/booking-flat-table.component';
+import { BookingFoodComponent } from 'reservation/booking/booking-food/booking-food.component';
+import { BookingNumberGuestComponent } from 'reservation/booking/booking-number-guest/booking-number-guest.component';
+import { BookingDateComponent } from 'reservation/booking/booking-date/booking-date.component';
+import { BookingSelectFoodComponent } from 'reservation/booking/booking-select-food/booking-select-food.component';
+import { BookingExtraInfoComponent } from 'reservation/booking/booking-extra-info/booking-extra-info.component';
+import { BookingConfirmedComponent } from 'reservation/booking/booking-confirmed/booking-confirmed.component';
+// MANAGER
 import { ManagerComponent } from 'manager/manager/manager.component';
 import { ManagerCalendarComponent } from 'manager/manager-calendar/manager-calendar.component';
 import { ManagerTableComponent } from 'manager/manager-table/manager-table.component';
-import { MatCardModule } from '@angular/material/card';
-import { MatMenuModule } from '@angular/material/menu';
 import { ManagerService } from 'manager/manager.service';
-import { UploaderService } from 'reservation/service/uploader.service';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { LinkTreeComponent } from './link-tree/link-tree.component';
 import { ManagerWeeklyCalendarComponent } from 'manager/manager-weekly-calendar/manager-weekly-calendar.component';
-import { LandingComponent } from './landing/mobile/landing.component';
-import { MenuComponent } from './menu/menu.component';
-import { LocationComponent } from './location/location.component';
+// ETC
+import { MaterialModule } from './material.module';
+
+const Components = [
+    AppComponent,
+    HomeComponent,
+    HomeVideoComponent,
+    HomeReviewComponent,
+    HomeYoutubeComponent,
+    FoodComponent,
+    FlatBenchComponent,
+    DividerComponent,
+    FooterComponent,
+    HeaderComponent,
+    StoryComponent,
+    RoomComponent,
+    MoveTopIconComponent,
+    LandingComponent,
+    MenuComponent,
+    LocationComponent,
+];
+
+const BookingComponents = [
+    BookingComponent,
+    BookingFlatTableComponent,
+    BookingFoodComponent,
+    BookingNumberGuestComponent,
+    BookingDateComponent,
+    BookingSelectFoodComponent,
+    BookingExtraInfoComponent,
+    BookingConfirmedComponent,
+];
+
+const ReservationComponents = [
+    ReservationComponent,
+    CalendarComponent,
+    ReservationDialogComponent,
+    DialogForTypeAndDateComponent,
+    DialogForCustomerInfoComponent,
+    DialogForFlatbenchComponent,
+    DialogForFoodComponent,
+    DialogForCarAndMemoComponent,
+    DialogForReservationConfirmationComponent,
+    DialogReservationCancelComponent,
+    SearchBookingComponent,
+    InputInfoDialogComponent,
+    BookingListDialogComponent,
+];
+
+const ManagerComponents = [
+    ManagerComponent,
+    ManagerCalendarComponent,
+    ManagerTableComponent,
+    ManagerWeeklyCalendarComponent,
+    LinkTreeComponent,
+];
 
 @NgModule({
     declarations: [
-        AppComponent,
-        HomeComponent,
-        HomeVideoComponent,
-        HomeReviewComponent,
-        HomeYoutubeComponent,
-        FoodComponent,
-        FlatBenchComponent,
-        DividerComponent,
-        FooterComponent,
-        HeaderComponent,
-        StoryComponent,
-        RoomComponent,
-        MoveTopIconComponent,
-        ReservationComponent,
-        CalendarComponent,
-        ReservationDialogComponent,
-        DialogForTypeAndDateComponent,
-        DialogForCustomerInfoComponent,
-        DialogForFlatbenchComponent,
-        DialogForFoodComponent,
-        DialogForCarAndMemoComponent,
-        DialogForReservationConfirmationComponent,
-        DialogReservationCancelComponent,
-        SearchBookingComponent,
-        InputInfoDialogComponent,
-        BookingListDialogComponent,
-        ManagerComponent,
-        ManagerCalendarComponent,
-        ManagerTableComponent,
-        ManagerWeeklyCalendarComponent,
-        LinkTreeComponent,
-        LandingComponent,
-        MenuComponent,
-        LocationComponent,
+        ...Components,
+        ...ReservationComponents,
+        ...BookingComponents,
+        ...ManagerComponents,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        MatIconModule,
         YouTubePlayerModule,
         CommonModule,
         AngularFireModule.initializeApp(environment.firebase),
         AngularFirestoreModule,
         AngularFireAuthModule,
         HttpClientModule,
-        MatDialogModule,
         FormsModule,
-        MatInputModule,
-        MatFormFieldModule,
-        MatTableModule,
-        MatSortModule,
-        MatTabsModule,
-        MatIconModule,
-        MatSelectModule,
-        MatButtonModule,
-        MatSlideToggleModule,
-        MatSnackBarModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-        MatCheckboxModule,
         ReactiveFormsModule,
-        MatCardModule,
-        MatMenuModule,
-        MatRippleModule,
+        MaterialModule,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     providers: [
@@ -151,21 +147,6 @@ import { LocationComponent } from './location/location.component';
         DBService,
         ReservationService,
         ManagerService,
-        DatePipe,
-        {
-            provide: DateAdapter,
-            useClass: MomentDateAdapter,
-            deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS],
-        },
-        {
-            provide: MAT_DATE_FORMATS,
-            useValue: {
-                display: {
-                    dateInput: 'YY.MM.DD',
-                    monthYearLabel: 'YY.MM.DD',
-                },
-            },
-        },
     ],
     bootstrap: [AppComponent],
 })
