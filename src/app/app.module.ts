@@ -28,7 +28,6 @@ import { LinkTreeComponent } from './link-tree/link-tree.component';
 import { LandingComponent } from './landing/landing.component';
 import { MenuComponent } from './menu/menu.component';
 import { LocationComponent } from './location/location.component';
-
 // RESERVATION
 import { ReservationComponent } from 'reservation/reservation/reservation.component';
 import { CalendarComponent } from 'reservation/calendar/calendar.component';
@@ -43,7 +42,7 @@ import { DialogReservationCancelComponent } from 'reservation/reservation-dialog
 import { SearchBookingComponent } from 'reservation/search-booking/search-booking.component';
 import { InputInfoDialogComponent } from 'reservation/search-booking/input-info-dialog/input-info-dialog.component';
 import { BookingListDialogComponent } from 'reservation/search-booking/booking-list-dialog/booking-list-dialog.component';
-import { HolidayService } from 'reservation/service/holiday.service';
+import { HolidayService } from 'reservation/service/holiday/holiday.service';
 import { DBService } from 'reservation/service/DB.service';
 import { ReservationService } from 'reservation/service/reservation.service';
 import { UploaderService } from 'reservation/service/uploader.service';
@@ -53,9 +52,14 @@ import { BookingFlatTableComponent } from 'reservation/booking/booking-flat-tabl
 import { BookingFoodComponent } from 'reservation/booking/booking-food/booking-food.component';
 import { BookingNumberGuestComponent } from 'reservation/booking/booking-number-guest/booking-number-guest.component';
 import { BookingDateComponent } from 'reservation/booking/booking-date/booking-date.component';
+import { BookingDateForFoodComponent } from 'reservation/booking/booking-date/booking-date-for-food/booking-date-for-food.component';
+import { BookingDateForFlatTableComponent } from 'reservation/booking/booking-date/booking-date-for-flat-table/booking-date-for-flat-table.component';
 import { BookingSelectFoodComponent } from 'reservation/booking/booking-select-food/booking-select-food.component';
 import { BookingExtraInfoComponent } from 'reservation/booking/booking-extra-info/booking-extra-info.component';
 import { BookingConfirmedComponent } from 'reservation/booking/booking-confirmed/booking-confirmed.component';
+import { BookingSearchComponent } from 'reservation/booking/booking-search/booking-search.component';
+import { BookingService } from 'reservation/service/booking/booking.service';
+
 // MANAGER
 import { ManagerComponent } from 'manager/manager/manager.component';
 import { ManagerCalendarComponent } from 'manager/manager-calendar/manager-calendar.component';
@@ -86,10 +90,13 @@ const Components = [
 
 const BookingComponents = [
     BookingComponent,
+    BookingSearchComponent,
     BookingFlatTableComponent,
     BookingFoodComponent,
     BookingNumberGuestComponent,
     BookingDateComponent,
+    BookingDateForFoodComponent,
+    BookingDateForFlatTableComponent,
     BookingSelectFoodComponent,
     BookingExtraInfoComponent,
     BookingConfirmedComponent,
@@ -147,6 +154,8 @@ const ManagerComponents = [
         DBService,
         ReservationService,
         ManagerService,
+        //신규
+        BookingService,
     ],
     bootstrap: [AppComponent],
 })

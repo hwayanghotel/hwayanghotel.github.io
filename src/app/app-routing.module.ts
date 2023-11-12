@@ -12,6 +12,8 @@ import { LandingComponent } from './landing/landing.component';
 import { LocationComponent } from './location/location.component';
 import { BookingFlatTableComponent } from 'reservation/booking/booking-flat-table/booking-flat-table.component';
 import { BookingFoodComponent } from 'reservation/booking/booking-food/booking-food.component';
+import { BookingSearchComponent } from 'reservation/booking/booking-search/booking-search.component';
+import { BookingConfirmedComponent } from 'reservation/booking/booking-confirmed/booking-confirmed.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'landing', pathMatch: 'full' },
@@ -27,6 +29,8 @@ const routes: Routes = [
     { path: 'location', component: LocationComponent },
     { path: 'booking-flat-bench', component: BookingFlatTableComponent },
     { path: 'booking-food', component: BookingFoodComponent },
+    { path: 'booking-search', component: BookingSearchComponent },
+    { path: 'booking-confirmed', component: BookingConfirmedComponent },
 ];
 
 @NgModule({
