@@ -13,6 +13,7 @@ import { LocationComponent } from './location/location.component';
 import { BookingFlatTableComponent } from 'reservation/booking/booking-flat-table/booking-flat-table.component';
 import { BookingFoodComponent } from 'reservation/booking/booking-food/booking-food.component';
 import { BookingSearchComponent } from 'reservation/booking/booking-search/booking-search.component';
+import { BookingParkingComponent } from 'reservation/booking/booking-parking/booking-parking.component';
 import { BookingConfirmedComponent } from 'reservation/booking/booking-confirmed/booking-confirmed.component';
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
     { path: 'booking-food', component: BookingFoodComponent },
     { path: 'booking-search', component: BookingSearchComponent },
     { path: 'booking-confirmed', component: BookingConfirmedComponent },
+    { path: 'booking-parking', component: BookingParkingComponent },
 ];
 
 @NgModule({

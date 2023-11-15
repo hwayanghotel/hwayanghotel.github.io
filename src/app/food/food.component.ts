@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Price } from 'reservation/service/booking/booking.interface';
+import { Price } from 'reservation/service/booking/booking.service.interface';
 
 @Component({
     selector: 'food',

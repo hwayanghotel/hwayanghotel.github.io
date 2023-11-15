@@ -55,7 +55,7 @@ import { BookingDateComponent } from 'reservation/booking/booking-date/booking-d
 import { BookingDateForFoodComponent } from 'reservation/booking/booking-date/booking-date-for-food/booking-date-for-food.component';
 import { BookingDateForFlatTableComponent } from 'reservation/booking/booking-date/booking-date-for-flat-table/booking-date-for-flat-table.component';
 import { BookingSelectFoodComponent } from 'reservation/booking/booking-select-food/booking-select-food.component';
-import { BookingExtraInfoComponent } from 'reservation/booking/booking-extra-info/booking-extra-info.component';
+import { BookingUserInfoComponent } from 'reservation/booking/booking-user-info/booking-user-info.component';
 import { BookingConfirmedComponent } from 'reservation/booking/booking-confirmed/booking-confirmed.component';
 import { BookingSearchComponent } from 'reservation/booking/booking-search/booking-search.component';
 import { BookingService } from 'reservation/service/booking/booking.service';
@@ -68,6 +68,7 @@ import { ManagerService } from 'manager/manager.service';
 import { ManagerWeeklyCalendarComponent } from 'manager/manager-weekly-calendar/manager-weekly-calendar.component';
 // ETC
 import { MaterialModule } from './material.module';
+import { BookingParkingComponent } from 'reservation/booking/booking-parking/booking-parking.component';
 
 const Components = [
     AppComponent,
@@ -98,8 +99,9 @@ const BookingComponents = [
     BookingDateForFoodComponent,
     BookingDateForFlatTableComponent,
     BookingSelectFoodComponent,
-    BookingExtraInfoComponent,
+    BookingUserInfoComponent,
     BookingConfirmedComponent,
+    BookingParkingComponent,
 ];
 
 const ReservationComponents = [
