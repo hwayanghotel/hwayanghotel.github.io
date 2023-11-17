@@ -2,19 +2,19 @@
 
 <div class="background" *ngIf="showMenu" (click)="showMenu = false"></div>
 <div class="menu" [class.active]="showMenu">
-	<h3>소개할게유</h3>
+	<h3>Story</h3>
 	<ul>
 		<li><a routerLink="/story">이야기</a></li>
-		<li><a routerLink="/home">고객리뷰</a></li>
+		<li><a routerLink="/home">고객 리뷰</a></li>
 		<li><a routerLink="/location">오시는길</a></li>
 	</ul>
-	<h3>놀다가유</h3>
+	<h3>Service</h3>
 	<ul>
 		<li><a routerLink="/room">객실 소개</a></li>
 		<li><a routerLink="/flat-bench">평상 소개</a></li>
 		<li><a routerLink="/food">식사 소개</a></li>
 	</ul>
-	<h3>예약해유</h3>
+	<h3>Reservation</h3>
 	<ul>
 		<li><a (click)="openBookingPension()">객실 예약</a></li>
 		<li><a routerLink="/booking-flat-bench">평상 예약</a></li>

@@ -9,7 +9,7 @@
 
 .title {
 	font-size: 1.5rem;
-	font-weight: 800;
+	font-weight: 600;
 }
 
 .content {
@@ -19,13 +19,19 @@
 	align-items: center;
 	margin-bottom: 2rem;
 
+	.guide-box {
+		margin-bottom: 2rem;
+	}
+
 	.description {
 		margin-right: 2rem;
-		font-size: 0.9rem;
+		font-size: 1rem;
 
 		.main-text {
 			margin-top: 3rem;
 			font-size: 1.2rem;
+			font-weight: 500;
+			line-height: 1.5rem;
 		}
 
 		button {
@@ -96,6 +102,7 @@ div.img-container {
 @media only screen and (max-width: 800px) {
 	.title {
 		margin-top: 5rem;
+		margin-bottom: 1rem;
 	}
 
 	.content {
@@ -131,30 +138,8 @@ div.img-container {
 				.pc {
 					display: none;
 				}
-
-				.guide-box {
-					display: flex;
-					justify-content: center;
-				}
 			}
 		}
-	}
-}
-
-p {
-	animation: slide-up 1s ease-in-out forwards;
-	opacity: 0;
-}
-
-@keyframes slide-up {
-	from {
-		transform: translateY(100%);
-		opacity: 0;
-	}
-
-	to {
-		transform: translateY(0);
-		opacity: 1;
 	}
 }
 
@@ -164,30 +149,4 @@ img.room-main {
 	width: 100%;
 	object-fit: cover;
 	filter: brightness(60%);
-}
-
-.room-main-text {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	color: white;
-
-	font-family: "Nanum Myeongjo", Roboto, "Helvetica Neue", sans-serif;
-	text-align: center;
-
-	h1 {
-		font-size: 2rem;
-		line-height: 2.4rem;
-	}
-
-	h5 {
-		padding-top: 1rem;
-	}
-
-	h1,
-	h5 {
-		font-family: "Nanum Myeongjo", Roboto, "Helvetica Neue", sans-serif;
-		font-weight: 700;
-	}
 }

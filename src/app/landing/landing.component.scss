@@ -52,13 +52,16 @@ img {
     }
 }
 
-h1,
-p {
+h1 {
     font-family: "Nanum Myeongjo", Roboto, "Helvetica Neue", sans-serif;
     font-weight: 700;
     word-wrap: break-word;
     word-break: keep-all;
     margin: 0;
+}
+
+p {
+    font-weight: 400;
 }
 
 #quick-link {
@@ -71,15 +74,9 @@ p {
         margin-top: 1rem;
         min-width: 40%;
         min-height: 6vh;
+        font-weight: 400;
     }
 
-}
-
-
-@media only screen and (max-width: 800px) {
-    .pc {
-        display: none;
-    }
 }
 
 @media only screen and (min-width: 800px) {

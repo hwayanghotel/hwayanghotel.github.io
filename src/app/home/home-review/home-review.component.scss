@@ -22,10 +22,12 @@
 
 			&.description {
 				font-size: large;
+				font-weight: 500;
 				margin: 0;
 			}
 
 			&.visited-date {
+				margin-top: 0.3rem;
 				margin-bottom: 2rem;
 				font-size: small;
 			}
