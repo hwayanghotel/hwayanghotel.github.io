@@ -1,6 +1,3 @@
 [submodule "reservation"]
 	path = reservation
 	url = https://github.com/hwayanghotel/reservation.git
-[submodule "manager"]
-	path = manager
-	url = https://github.com/hwayanghotel/manager.git
