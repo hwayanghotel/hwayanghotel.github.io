@@ -1,20 +1,20 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 @Component({
-    selector: 'flat-bench',
-    templateUrl: './flat-bench.component.html',
-    styleUrls: ['./flat-bench.component.scss', '../pension-service.scss'],
+    selector: 'flat-table',
+    templateUrl: './flat-table.component.html',
+    styleUrls: ['./flat-table.component.scss', '../pension-service.scss'],
 })
-export class FlatBenchComponent {
+export class FlatTableComponent {
     @ViewChild('MainImageArea') MainImageArea!: ElementRef<HTMLElement>;
 
     color: string = 'white';
     currentIndex: number = 0;
     images: string[] = [
-        'assets/flat-bench/flat-bench1.jpg',
-        'assets/flat-bench/flat-bench2.jpg',
-        'assets/flat-bench/flat-bench3.jpg',
-        'assets/flat-bench/flat-bench4.jpg',
+        'assets/flat-table/flat-table1.jpg',
+        'assets/flat-table/flat-table2.jpg',
+        'assets/flat-table/flat-table3.jpg',
+        'assets/flat-table/flat-table4.jpg',
     ];
 
     showSelectedImage(index: number) {

@@ -18,34 +18,14 @@ import { FoodComponent } from './food/food.component';
 import { DividerComponent } from './divider/divider.component';
 import { HomeYoutubeComponent } from './home/home-youtube/home-youtube.component';
 import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
 import { StoryComponent } from './story/story.component';
 import { RoomComponent } from './room/room.component';
 import { MoveTopIconComponent } from './move-top-icon/move-top-icon.component';
-import { FlatBenchComponent } from './flat-bench/flat-bench.component';
+import { FlatTableComponent } from './flat-table/flat-table.component';
 import { environment } from '../environments/environment';
-import { LinkTreeComponent } from './link-tree/link-tree.component';
 import { LandingComponent } from './landing/landing.component';
 import { MenuComponent } from './menu/menu.component';
 import { LocationComponent } from './location/location.component';
-// RESERVATION
-import { ReservationComponent } from 'reservation/reservation/reservation.component';
-import { CalendarComponent } from 'reservation/calendar/calendar.component';
-import { ReservationDialogComponent } from 'reservation/reservation-dialog/reservation-dialog.component';
-import { DialogForTypeAndDateComponent } from 'reservation/reservation-dialog/dialog-for-type-and-date/dialog-for-type-and-date.component';
-import { DialogForCustomerInfoComponent } from 'reservation/reservation-dialog/dialog-for-customer-info/dialog-for-customer-info.component';
-import { DialogForFlatbenchComponent } from 'reservation/reservation-dialog/dialog-for-flatbench/dialog-for-flatbench.component';
-import { DialogForFoodComponent } from 'reservation/reservation-dialog/dialog-for-food/dialog-for-food.component';
-import { DialogForCarAndMemoComponent } from 'reservation/reservation-dialog/dialog-for-car-and-memo/dialog-for-car-and-memo.component';
-import { DialogForReservationConfirmationComponent } from 'reservation/reservation-dialog/dialog-for-reservation-confirmation/dialog-for-reservation-confirmation.component';
-import { DialogReservationCancelComponent } from 'reservation/reservation-dialog/dialog-reservation-cancel/dialog-reservation-cancel.component';
-import { SearchBookingComponent } from 'reservation/search-booking/search-booking.component';
-import { InputInfoDialogComponent } from 'reservation/search-booking/input-info-dialog/input-info-dialog.component';
-import { BookingListDialogComponent } from 'reservation/search-booking/booking-list-dialog/booking-list-dialog.component';
-import { HolidayService } from 'reservation/service/holiday/holiday.service';
-import { DBService } from 'reservation/service/DB.service';
-import { ReservationService } from 'reservation/service/reservation.service';
-import { UploaderService } from 'reservation/service/uploader.service';
 //BOOKING
 import { BookingComponent } from 'reservation/booking/booking.component';
 import { BookingFlatTableComponent } from 'reservation/booking/booking-flat-table/booking-flat-table.component';
@@ -60,15 +40,12 @@ import { BookingConfirmedComponent } from 'reservation/booking/booking-confirmed
 import { BookingSearchComponent } from 'reservation/booking/booking-search/booking-search.component';
 import { BookingService } from 'reservation/service/booking/booking.service';
 
-// MANAGER
-import { ManagerComponent } from 'manager/manager/manager.component';
-import { ManagerCalendarComponent } from 'manager/manager-calendar/manager-calendar.component';
-import { ManagerTableComponent } from 'manager/manager-table/manager-table.component';
-import { ManagerService } from 'manager/manager.service';
-import { ManagerWeeklyCalendarComponent } from 'manager/manager-weekly-calendar/manager-weekly-calendar.component';
 // ETC
 import { MaterialModule } from './material.module';
 import { BookingParkingComponent } from 'reservation/booking/booking-parking/booking-parking.component';
+import { HolidayService } from 'reservation/service/holiday/holiday.service';
+import { CalendarService } from 'reservation/service/calendar/calendar.service';
+import { MediatorService } from 'reservation/service/mediator/mediator.service';
 
 const Components = [
     AppComponent,
@@ -77,10 +54,9 @@ const Components = [
     HomeReviewComponent,
     HomeYoutubeComponent,
     FoodComponent,
-    FlatBenchComponent,
+    FlatTableComponent,
     DividerComponent,
     FooterComponent,
-    HeaderComponent,
     StoryComponent,
     RoomComponent,
     MoveTopIconComponent,
@@ -104,37 +80,8 @@ const BookingComponents = [
     BookingParkingComponent,
 ];
 
-const ReservationComponents = [
-    ReservationComponent,
-    CalendarComponent,
-    ReservationDialogComponent,
-    DialogForTypeAndDateComponent,
-    DialogForCustomerInfoComponent,
-    DialogForFlatbenchComponent,
-    DialogForFoodComponent,
-    DialogForCarAndMemoComponent,
-    DialogForReservationConfirmationComponent,
-    DialogReservationCancelComponent,
-    SearchBookingComponent,
-    InputInfoDialogComponent,
-    BookingListDialogComponent,
-];
-
-const ManagerComponents = [
-    ManagerComponent,
-    ManagerCalendarComponent,
-    ManagerTableComponent,
-    ManagerWeeklyCalendarComponent,
-    LinkTreeComponent,
-];
-
 @NgModule({
-    declarations: [
-        ...Components,
-        ...ReservationComponents,
-        ...BookingComponents,
-        ...ManagerComponents,
-    ],
+    declarations: [...Components, ...BookingComponents],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -151,13 +98,10 @@ const ManagerComponents = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     providers: [
-        UploaderService,
         HolidayService,
-        DBService,
-        ReservationService,
-        ManagerService,
-        //신규
         BookingService,
+        CalendarService,
+        MediatorService,
     ],
     bootstrap: [AppComponent],
 })
