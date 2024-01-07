@@ -26,7 +26,7 @@ export class LandingComponent implements OnInit {
     openQuickLink: boolean;
 
     list: { text: string; person: string }[] = [
-        { text: '어서오세유', person: '능운대펜션 CEO' },
+        { text: '어서오세유', person: '능운대지기' },
         { text: '주인이 착해유', person: '능운대펜션 딸' },
         { text: '계곡, 10초 컷', person: '능운대펜션 아들' },
         { text: '단골은 서비스유', person: '능운대펜션 사위' },
