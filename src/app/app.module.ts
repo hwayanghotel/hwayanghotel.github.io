@@ -39,13 +39,19 @@ import { BookingUserInfoComponent } from 'reservation/booking/booking-user-info/
 import { BookingConfirmedComponent } from 'reservation/booking/booking-confirmed/booking-confirmed.component';
 import { BookingSearchComponent } from 'reservation/booking/booking-search/booking-search.component';
 import { BookingService } from 'reservation/service/booking/booking.service';
-
-// ETC
-import { MaterialModule } from './material.module';
 import { BookingParkingComponent } from 'reservation/booking/booking-parking/booking-parking.component';
 import { HolidayService } from 'reservation/service/holiday/holiday.service';
 import { CalendarService } from 'reservation/service/calendar/calendar.service';
 import { MediatorService } from 'reservation/service/mediator/mediator.service';
+
+//Admin
+import { GuestListComponent } from 'admin/src/app/guest-list/guest-list.component';
+import { GuestDetailComponent } from 'admin/src/app/guest-detail/guest-detail.component';
+import { CalendarComponent } from 'admin/src/app/calendar/calendar.component';
+import { AdminComponent } from 'admin/src/app/admin/admin.component';
+
+//ETC
+import { MaterialModule } from './material.module';
 
 const Components = [
     AppComponent,
@@ -80,8 +86,15 @@ const BookingComponents = [
     BookingParkingComponent,
 ];
 
+const AdminComponents = [
+    AdminComponent,
+    GuestListComponent,
+    GuestDetailComponent,
+    CalendarComponent,
+];
+
 @NgModule({
-    declarations: [...Components, ...BookingComponents],
+    declarations: [...Components, ...AdminComponents, ...BookingComponents],
     imports: [
         BrowserModule,
         AppRoutingModule,

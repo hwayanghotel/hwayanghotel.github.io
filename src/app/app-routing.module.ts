@@ -12,6 +12,10 @@ import { BookingFoodComponent } from 'reservation/booking/booking-food/booking-f
 import { BookingSearchComponent } from 'reservation/booking/booking-search/booking-search.component';
 import { BookingParkingComponent } from 'reservation/booking/booking-parking/booking-parking.component';
 import { BookingConfirmedComponent } from 'reservation/booking/booking-confirmed/booking-confirmed.component';
+import { GuestListComponent } from 'admin/src/app/guest-list/guest-list.component';
+import { GuestDetailComponent } from 'admin/src/app/guest-detail/guest-detail.component';
+import { CalendarComponent } from 'admin/src/app/calendar/calendar.component';
+import { AdminComponent } from 'admin/src/app/admin/admin.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'landing', pathMatch: 'full' },
@@ -27,6 +31,10 @@ const routes: Routes = [
     { path: 'booking-search', component: BookingSearchComponent },
     { path: 'booking-confirmed', component: BookingConfirmedComponent },
     { path: 'booking-parking', component: BookingParkingComponent },
+    { path: 'guest-list', component: GuestListComponent },
+    { path: 'guest-detail', component: GuestDetailComponent },
+    { path: 'calendar', component: CalendarComponent },
+    { path: 'admin', component: AdminComponent },
 ];
 
 @NgModule({
