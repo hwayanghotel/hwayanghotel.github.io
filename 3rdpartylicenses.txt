@@ -190,6 +190,8 @@ Apache-2.0
 @firebase/webchannel-wrapper
 Apache-2.0
 
+admin
+
 firebase/analytics
 
 firebase/app
