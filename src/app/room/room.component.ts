@@ -13,10 +13,11 @@ interface IRoom {
 @Component({
     selector: 'room',
     templateUrl: './room.component.html',
-    styleUrls: ['./room.component.scss'],
+    styleUrls: ['./room.component.scss', '../pension-service.scss'],
 })
 export class RoomComponent {
     roomInfo = roomInfo;
+    color = 'white';
 
     private touchStartX: number;
     private touchEndX: number;
@@ -43,6 +44,7 @@ export class RoomComponent {
     private _timeoutHandle: any;
 
     private detectTouchDirection(room: IRoom) {
+        if (!room) return;
         let selectedRoom: IRoom = this.roomInfo.filter(
             (v) => room.id === v.id
         )[0];
@@ -76,6 +78,11 @@ export class RoomComponent {
                 behavior: 'smooth',
             });
         }
+    }
+
+    @HostListener('window:scroll', ['$event'])
+    onScroll(event: Event): void {
+        this.color = window.scrollY > window.innerHeight ? 'black' : 'white';
     }
 }
 

@@ -7,7 +7,8 @@ p.menu-title {
 
 .menu-contents {
 	display: flex;
-	font-size: smaller;
+	font-size: 0.9rem;
+	justify-content: center;
 
 	.menu-list {
 		margin: 0 1rem;
@@ -16,6 +17,10 @@ p.menu-title {
 		flex-direction: column;
 		align-items: flex-end;
 
+		p {
+			font-size: 1rem;
+		}
+
 		span {
 			font-size: x-small;
 		}
@@ -23,6 +28,7 @@ p.menu-title {
 }
 
 a {
+	font-size: 1rem;
 	margin-top: 2rem;
 	display: block;
 	text-align: center;

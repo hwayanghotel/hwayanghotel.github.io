@@ -6,12 +6,32 @@ body {
 body {
 	margin: 0;
 
+	a,
 	div,
 	button,
-	p {
-		font-family: "Nanum Myeongjo", Roboto, "Helvetica Neue", sans-serif;
-		font-weight: 700;
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	span,
+	textarea,
+	input {
+		@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+		font-family: 'Noto Sans KR', sans-serif, Roboto;
 		word-wrap: break-word;
 		word-break: keep-all;
+		margin: 0;
 	}
+}
+
+.mat-bottom-sheet-container {
+	padding: 1rem 1rem 0 1rem !important;
+	border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.mat-bottom-sheet-container-medium {
+	border-radius: 1.5rem 1.5rem 0 0 !important;
 }

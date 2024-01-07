@@ -1,0 +1,15 @@
+<menu></menu>
+<img src="assets/story/panel.jpg" alt="hwayang valley landing page" />
+<div class="text">
+	<h1 [@textAnimation]="textAnimationState" [innerHTML]="list[selectedIndex].text"></h1>
+	<p [@textAnimation]="textAnimationState" [innerHTML]="'- ' + list[selectedIndex].person + ' -'"></p>
+	<button class="mobile" mat-button color="white" (click)="scrollTo('quick-link')">Quick Link</button>
+</div>
+<div id="quick-link" *ngIf="openQuickLink">
+	<button mat-stroked-button (click)="openBookingPension()">펜션 예약하기</button>
+	<button mat-stroked-button routerLink="/booking-flat-table">평상 예약하기</button>
+	<button mat-stroked-button routerLink="/booking-food">식사 예약하기</button>
+	<button mat-stroked-button routerLink="/home">더 둘러보기</button>
+</div>
+<footer *ngIf="openQuickLink"></footer>
+<move-top-icon></move-top-icon>
