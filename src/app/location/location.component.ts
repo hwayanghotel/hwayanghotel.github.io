@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
 const url =
-    'https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=oltivu5skt';
+    'https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=lpn83plf5a';
 declare var naver: any;
 
 @Component({
