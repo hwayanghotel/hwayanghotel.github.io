@@ -2,7 +2,7 @@
 	<div class="review-box" *ngFor="let review of ReviewList; let index=index;" id="{{index}}">
 		<p class="description">" {{ review.description }} "</p>
 		<p class="visited-date">{{ review.date }}</p>
-		<a class="img-container" href="{{ review.href }}">
+		<a class="img-container" href="{{ review.href }}" target="_blank">
 			<img src="{{ review.img }}" alt="hwayang valley neung-un-dae pension visitor's reivew link" />
 			<p class="link">리뷰 방문하기</p>
 		</a>

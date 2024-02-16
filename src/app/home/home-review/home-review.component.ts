@@ -12,23 +12,23 @@ export class HomeReviewComponent {
     activeReview = ReviewList[0];
     currentIndex: number = 0;
 
-    private _alreadyChanged: boolean = false;
-    private _timeoutHandle: any;
-
     constructor() {
-        setInterval(() => {
-            const boxHeight =
-                this.reviewContainer.nativeElement.getBoundingClientRect()
-                    .height;
-            const boxPositionY =
-                this.reviewContainer.nativeElement.getBoundingClientRect().y;
-            const windowHeight = window.innerHeight;
-            if (boxPositionY > 0 && windowHeight - boxHeight > boxPositionY) {
-                this.showSelectedReview(
-                    (this.currentIndex + 1) % ReviewList.length
-                );
-            }
-        }, 3000);
+        // setInterval(() => {
+        //     const boxHeight =
+        //         this.reviewContainer.nativeElement.getBoundingClientRect()
+        //             .height;
+        //     const boxPositionY =
+        //         this.reviewContainer.nativeElement.getBoundingClientRect().y;
+        //     const windowHeight = window.innerHeight;
+        //     if (
+        //         boxPositionY > 0 &&
+        //         windowHeight - boxHeight > boxPositionY
+        //     ) {
+        //         this.showSelectedReview(
+        //             (this.currentIndex + 1) % ReviewList.length
+        //         );
+        //     }
+        // }, 3000);
     }
 
     onScroll() {
@@ -36,23 +36,26 @@ export class HomeReviewComponent {
             this._alreadyChanged = true;
             clearTimeout(this._timeoutHandle);
             this._timeoutHandle = setTimeout(() => {
-                this._setCurrentIndex();
-                this.showSelectedReview(this.currentIndex);
-            }, 50);
-        } else {
-            this._alreadyChanged = false;
+                this.showSelectedReview(this._getCurrentIndex());
+                this._alreadyChanged = false;
+            }, 200);
         }
     }
+    private _alreadyChanged: boolean = false;
+    private _timeoutHandle: any;
 
-    private _setCurrentIndex() {
+    private _getCurrentIndex(): number {
         const width = this.reviewContainer.nativeElement.scrollWidth;
         const currentPosition = this.reviewContainer.nativeElement.scrollLeft;
-        this.currentIndex = Math.round(
-            currentPosition / (width / ReviewList.length)
-        );
+        return Math.round(currentPosition / (width / ReviewList.length));
     }
 
     showSelectedReview(index: number) {
+        this._alreadyChanged = true;
+        setTimeout(() => {
+            if (this._alreadyChanged) this._alreadyChanged = false;
+        }, 1000);
+        window.scrollBy(0, -1);
         this.reviewContainer.nativeElement.children[index].scrollIntoView({
             behavior: 'smooth',
             block: 'center',

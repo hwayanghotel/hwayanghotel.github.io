@@ -39,8 +39,8 @@
 	p {
 		font-family: "Nanum Myeongjo", Roboto, "Helvetica Neue", sans-serif;
 		text-align: center;
-		font-size: 1.5rem;
-		line-height: 1.7rem;
+		font-size: 1.8rem;
+		line-height: 2rem;
 		font-weight: 900;
 		color: white;
 		margin: 1rem;
@@ -122,13 +122,13 @@ p {
 	}
 }
 
-@media (min-width: 768px) {
-	.img-header p {
-		font-size: 5rem;
-		line-height: 5.4rem;
+// @media (min-width: 768px) {
+// 	.img-header p {
+// 		font-size: 5rem;
+// 		line-height: 5.4rem;
 
-		&.small {
-			font-size: 1.3rem;
-		}
-	}
-}
+// 		&.small {
+// 			font-size: 1.3rem;
+// 		}
+// 	}
+// }
