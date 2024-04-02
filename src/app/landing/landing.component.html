@@ -7,8 +7,18 @@
 </div>
 <div id="quick-link" *ngIf="openQuickLink">
 	<button mat-stroked-button (click)="openBookingPension()">펜션 예약하기</button>
-	<button mat-stroked-button routerLink="/booking-flat-table">평상 예약하기</button>
-	<button mat-stroked-button routerLink="/booking-food">식사 예약하기</button>
+	<button mat-stroked-button>
+		<a class="link" href="tel:043-832-4281">
+			평상 예약(전화)
+		</a>
+	</button>
+	<button mat-stroked-button>
+		<a class="link" href="tel:043-832-4281">
+			식사 예약(전화)
+		</a>
+	</button>
+	<!-- <button mat-stroked-button routerLink="/booking-flat-table">평상 예약하기(전화)</button> -->
+	<!-- <button mat-stroked-button routerLink="/booking-food">식사 예약하기</button> -->
 	<button mat-stroked-button routerLink="/home">더 둘러보기</button>
 </div>
 <footer *ngIf="openQuickLink"></footer>
