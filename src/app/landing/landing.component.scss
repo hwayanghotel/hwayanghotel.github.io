@@ -76,7 +76,11 @@ p {
         min-height: 6vh;
         font-weight: 400;
     }
+}
 
+.link {
+    text-decoration: none;
+    color: inherit;
 }
 
 @media only screen and (min-width: 800px) {
