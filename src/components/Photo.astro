@@ -1,0 +1,63 @@
+---
+import images from '../data/images.generated.json';
+interface Props {
+  name: keyof typeof images;
+  alt?: string;
+  class?: string;
+  sizes?: string;
+  priority?: boolean;
+  position?: string;
+  mobileName?: keyof typeof images;
+  mobileSizes?: string;
+}
+const {
+  name,
+  alt,
+  class: className = '',
+  sizes = '(max-width: 700px) 100vw, 50vw',
+  priority = false,
+  position,
+  mobileName,
+  mobileSizes = sizes,
+} = Astro.props;
+const image = images[name];
+const srcset = image.widths.map((width) => `/images/${name}-${width}.webp ${width}w`).join(', ');
+const fallbackWidth = image.widths.find((w) => w >= 740) || image.widths.at(-1);
+const mobileImage = mobileName ? images[mobileName] : undefined;
+const mobileSrcset = mobileImage?.widths
+  .map((width) => `/images/${mobileName}-${width}.webp ${width}w`)
+  .join(', ');
+---
+
+{mobileImage ? (
+  <picture>
+    <source media="(max-width: 600px)" srcset={mobileSrcset} sizes={mobileSizes} />
+    <img
+      class={className}
+      src={`/images/${name}-${fallbackWidth}.webp`}
+      srcset={srcset}
+      sizes={sizes}
+      width={image.width}
+      height={image.height}
+      alt={alt ?? image.alt}
+      loading={priority ? 'eager' : 'lazy'}
+      fetchpriority={priority ? 'high' : 'auto'}
+      decoding="async"
+      style={position ? `object-position:${position}` : undefined}
+    />
+  </picture>
+) : (
+  <img
+    class={className}
+    src={`/images/${name}-${fallbackWidth}.webp`}
+    srcset={srcset}
+    sizes={sizes}
+    width={image.width}
+    height={image.height}
+    alt={alt ?? image.alt}
+    loading={priority ? 'eager' : 'lazy'}
+    fetchpriority={priority ? 'high' : 'auto'}
+    decoding="async"
+    style={position ? `object-position:${position}` : undefined}
+  />
+)}

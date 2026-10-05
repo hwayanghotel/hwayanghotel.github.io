@@ -1,0 +1,51 @@
+---
+import Brand from './Brand.astro';
+import Icon from './Icon.astro';
+import { navigation, site } from '../data/site';
+const pathname = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="header-inner container">
+    <Brand />
+    <nav class="desktop-nav" aria-label="주 메뉴">
+      {navigation.map((link) => (
+        <a href={link.href} aria-current={pathname.startsWith(link.href) ? 'page' : undefined}>
+          {link.label}
+        </a>
+      ))}
+    </nav>
+    <div class="header-actions">
+      <a class="header-booking" href={site.bookingUrl} target="_blank" rel="noopener noreferrer">
+        숙박 예약
+        <Icon name="diagonal" size={16} />
+        <span class="sr-only">(새 창)</span>
+      </a>
+      <details class="mobile-menu">
+        <summary aria-label="메뉴 열기 또는 닫기">
+          <span class="menu-lines"></span>
+          <span class="sr-only">전체 메뉴</span>
+        </summary>
+        <nav class="mobile-menu-panel" aria-label="모바일 주 메뉴">
+          <span class="eyebrow">HWAYANG VALLEY · NEUNGUNDAE</span>
+          {navigation.map((link, i) => (
+            <a href={link.href} aria-current={pathname.startsWith(link.href) ? 'page' : undefined}>
+              <span class="menu-number">0{i + 1}</span>
+              {link.label}
+              <Icon name="diagonal" />
+            </a>
+          ))}
+          <a href="/guide/">
+            <span class="menu-number">05</span>이용 안내
+            <Icon name="diagonal" />
+          </a>
+          <div class="menu-contact">
+            <span>식사 예약 · 이용 문의</span>
+            <a href={site.phoneHref}>{site.phone}</a>
+            <p>충북 괴산군 청천면 화양동길 247</p>
+          </div>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,34 @@
+---
+import { faqs } from '../data/site';
+import Icon from './Icon.astro';
+interface Props {
+  limit?: number;
+}
+const { limit = faqs.length } = Astro.props;
+---
+
+<div class="faq-list">
+  {faqs.slice(0, limit).map((faq) => (
+    <details class="faq-item">
+      <summary>
+        <span>{faq.question}</span>
+        <Icon name="plus" size={20} />
+      </summary>
+      <div class="faq-answer">
+        <p>{faq.answer}</p>
+        {faq.link && (
+          <a
+            class="text-link"
+            href={faq.link}
+            target={faq.external ? '_blank' : undefined}
+            rel={faq.external ? 'noopener noreferrer' : undefined}
+          >
+            {faq.label}
+            <Icon name={faq.external ? 'diagonal' : 'arrow'} size={16} />
+            {faq.external && <span class="sr-only">(새 창)</span>}
+          </a>
+        )}
+      </div>
+    </details>
+  ))}
+</div>

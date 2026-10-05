@@ -1,0 +1,101 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import RoomCard from '../../components/RoomCard.astro';
+import Button from '../../components/Button.astro';
+import Icon from '../../components/Icon.astro';
+import BookingBanner from '../../components/BookingBanner.astro';
+import { rooms, site } from '../../data/site';
+---
+
+<Layout
+  title="객실 안내 | 화양계곡 능운대펜션"
+  description="능운대, 학소대, 와룡암, 첨성대. 화양계곡 능운대펜션의 네 온돌 객실을 사진과 인원, 구조로 비교해 보세요. 날짜별 요금은 떠나요에서 확인하세요."
+>
+  <div class="container page-bottom room-index">
+    <nav class="breadcrumbs" aria-label="현재 위치">
+      <a href="/">홈</a>
+      <span>/</span>
+      <span>객실</span>
+    </nav>
+    <header class="page-heading page-heading-row">
+      <div>
+        <span class="eyebrow">THE FOUR ROOMS</span>
+        <h1>네 개의 온돌 객실.</h1>
+        <p>
+          능운대 · 학소대 · 와룡암 · 첨성대
+          <br />
+          함께 오는 인원과 필요한 공간에 맞춰 골라보세요.
+        </p>
+      </div>
+      <Button href={site.bookingUrl} external icon="diagonal" variant="outline">
+        날짜별 요금·예약 확인
+      </Button>
+    </header>
+    <section aria-label="네 객실 둘러보기" class="room-index-grid">
+      <div class="room-grid">
+        {rooms.map((room, i) => (
+          <RoomCard room={room} priority={i === 0} />
+        ))}
+      </div>
+    </section>
+    <div
+      class="table-wrap"
+      tabindex="0"
+      role="region"
+      aria-label="객실 비교표, 작은 화면에서는 가로로 스크롤하세요"
+    >
+      <table class="comparison">
+        <caption>네 객실, 한눈에 비교하기</caption>
+        <thead>
+          <tr>
+            <th scope="col">객실</th>
+            <th scope="col">기준 / 최대</th>
+            <th scope="col">공간</th>
+            <th scope="col">구조</th>
+            <th scope="col">
+              <span class="sr-only">상세 안내</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {rooms.map((room) => (
+            <tr>
+              <td>
+                <a href={`/rooms/${room.slug}/`}>{room.name}</a>
+              </td>
+              <td>
+                {room.standard}인 / {room.maximum}인
+              </td>
+              <td>약 {room.pyeong}평</td>
+              <td>{room.structure}</td>
+              <td>
+                <a href={`/rooms/${room.slug}/`} aria-label={`${room.name} 객실 상세 보기`}>
+                  <Icon name="diagonal" size={17} />
+                </a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="comparison-note">
+      기준 인원을 초과하면 추가 요금이 발생할 수 있습니다. 연령별 인원 기준과 최종 이용 조건은 예약
+      페이지에서 확인해 주세요.
+    </p>
+    <div class="notice-box" style="margin-top:42px">
+      <Icon name="clock" size={22} />
+      <div>
+        <strong>입실 15:00 · 퇴실 11:00</strong>
+        <p>
+          늦게 도착하시는 경우 미리 연락해 주세요. 차량으로 오시면 출발 전에 진입 안내를 확인해
+          주세요.
+        </p>
+        <a class="text-link" href="/guide/">
+          이용 안내
+          <Icon name="arrow" size={16} />
+        </a>
+      </div>
+    </div>
+  </div>
+  <BookingBanner />
+</Layout>
