@@ -1,0 +1,152 @@
+{
+  "quiet-creek": {
+    "path": "src/assets/photos/quiet-creek.jpg",
+    "alt": "조용한 계곡 전경",
+    "source_id": "A141",
+    "source_url": "https://static.wixstatic.com/media/826ea4_dbb3e94be9bd4f92845a2ee6ae734f5a~mv2_d_1767_1845_s_2.jpg"
+  },
+  "dining-table": {
+    "path": "src/assets/photos/dining-table.jpg",
+    "alt": "더덕구이 파전 도토리묵 상차림",
+    "source_id": "A173",
+    "source_url": "https://static.wixstatic.com/media/826ea4_cc90610e920a45b984e7953747a40b09~mv2_d_5472_3072_s_4_2.jpg"
+  },
+  "deodeok": {
+    "path": "src/assets/photos/deodeok.jpg",
+    "alt": "더덕구이 접사",
+    "source_id": "A164",
+    "source_url": "https://static.wixstatic.com/media/826ea4_94d4e937d30e49299814399a58a28c6a~mv2_d_5472_3072_s_4_2.jpg"
+  },
+  "muk": {
+    "path": "src/assets/photos/muk.jpg",
+    "alt": "도토리묵 접사",
+    "source_id": "A170",
+    "source_url": "https://static.wixstatic.com/media/826ea4_42830a3698b04ce887f1ae6b3979043c~mv2_d_5472_3072_s_4_2.jpg"
+  },
+  "forest-path": {
+    "path": "src/assets/photos/forest-path.jpg",
+    "alt": "나무 그늘 산책로",
+    "source_id": "A200",
+    "source_url": "https://static.wixstatic.com/media/826ea4_c9792b2ace3d474ab6bcf259c8ac263b~mv2_d_5472_3648_s_4_2.jpg"
+  },
+  "neungundae-rock": {
+    "path": "src/assets/photos/neungundae-rock.png",
+    "alt": "능운대 바위",
+    "source_id": "A156",
+    "source_url": "https://static.wixstatic.com/media/826ea4_d2ada32b9c604f9b8622580f4703ff10~mv2.png"
+  },
+  "exterior": {
+    "path": "src/assets/photos/exterior.png",
+    "alt": "초록 지붕 아래 나란히 이어진 능운대펜션의 객실과 앞길",
+    "source_id": "A195",
+    "source_url": "https://static.wixstatic.com/media/826ea4_433bbf8a189b4ccd9a2268e1ef5b0f70~mv2.png"
+  },
+  "room1-1": {
+    "path": "src/assets/photos/room1-1.jpg",
+    "alt": "능운대 객실의 거실과 온돌 바닥",
+    "source_id": "A065",
+    "source_url": "https://github.com/hwayanghotel/hwayanghotel.github.io/blob/bddd10de7d4ee6279221f312081396de503bac92/src/assets/room/room1-1.jpg"
+  },
+  "room1-2": {
+    "path": "src/assets/photos/room1-2.jpg",
+    "alt": "능운대 거실과 분리된 방, 주방",
+    "source_id": "A066",
+    "source_url": "https://github.com/hwayanghotel/hwayanghotel.github.io/blob/bddd10de7d4ee6279221f312081396de503bac92/src/assets/room/room1-2.jpg"
+  },
+  "room1-4": {
+    "path": "src/assets/photos/room1-4.jpg",
+    "alt": "능운대 온돌방의 창문",
+    "source_id": "A068",
+    "source_url": "https://github.com/hwayanghotel/hwayanghotel.github.io/blob/bddd10de7d4ee6279221f312081396de503bac92/src/assets/room/room1-4.jpg"
+  },
+  "room1-5": {
+    "path": "src/assets/photos/room1-5.jpg",
+    "alt": "능운대 거실의 피아노",
+    "source_id": "A069",
+    "source_url": "https://github.com/hwayanghotel/hwayanghotel.github.io/blob/bddd10de7d4ee6279221f312081396de503bac92/src/assets/room/room1-5.jpg"
+  },
+  "room2-1": {
+    "path": "src/assets/photos/room2-1.jpg",
+    "alt": "학소대 객실의 온돌 바닥과 침구",
+    "source_id": "A070",
+    "source_url": "https://github.com/hwayanghotel/hwayanghotel.github.io/blob/bddd10de7d4ee6279221f312081396de503bac92/src/assets/room/room2-1.jpg"
+  },
+  "room2-2": {
+    "path": "src/assets/photos/room2-2.jpg",
+    "alt": "학소대의 분리된 방과 주방",
+    "source_id": "A071",
+    "source_url": "https://github.com/hwayanghotel/hwayanghotel.github.io/blob/bddd10de7d4ee6279221f312081396de503bac92/src/assets/room/room2-2.jpg"
+  },
+  "room2-3": {
+    "path": "src/assets/photos/room2-3.jpg",
+    "alt": "학소대 창가와 거실",
+    "source_id": "A072",
+    "source_url": "https://github.com/hwayanghotel/hwayanghotel.github.io/blob/bddd10de7d4ee6279221f312081396de503bac92/src/assets/room/room2-3.jpg"
+  },
+  "room2-4": {
+    "path": "src/assets/photos/room2-4.jpg",
+    "alt": "학소대 객실의 주방",
+    "source_id": "A073",
+    "source_url": "https://github.com/hwayanghotel/hwayanghotel.github.io/blob/bddd10de7d4ee6279221f312081396de503bac92/src/assets/room/room2-4.jpg"
+  },
+  "room3-3": {
+    "path": "src/assets/photos/room3-3.jpg",
+    "alt": "와룡암 객실의 온돌 바닥과 침구",
+    "source_id": "A076",
+    "source_url": "https://github.com/hwayanghotel/hwayanghotel.github.io/blob/bddd10de7d4ee6279221f312081396de503bac92/src/assets/room/room3-3.jpg"
+  },
+  "room3-1": {
+    "path": "src/assets/photos/room3-1.jpg",
+    "alt": "와룡암 거실에서 바라본 방",
+    "source_id": "A074",
+    "source_url": "https://github.com/hwayanghotel/hwayanghotel.github.io/blob/bddd10de7d4ee6279221f312081396de503bac92/src/assets/room/room3-1.jpg"
+  },
+  "room3-2": {
+    "path": "src/assets/photos/room3-2.jpg",
+    "alt": "와룡암 거실과 텔레비전",
+    "source_id": "A075",
+    "source_url": "https://github.com/hwayanghotel/hwayanghotel.github.io/blob/bddd10de7d4ee6279221f312081396de503bac92/src/assets/room/room3-2.jpg"
+  },
+  "room3-4": {
+    "path": "src/assets/photos/room3-4.jpg",
+    "alt": "와룡암 객실의 주방",
+    "source_id": "A077",
+    "source_url": "https://github.com/hwayanghotel/hwayanghotel.github.io/blob/bddd10de7d4ee6279221f312081396de503bac92/src/assets/room/room3-4.jpg"
+  },
+  "room3-5": {
+    "path": "src/assets/photos/room3-5.jpg",
+    "alt": "와룡암 창가와 냉장고",
+    "source_id": "A078",
+    "source_url": "https://github.com/hwayanghotel/hwayanghotel.github.io/blob/bddd10de7d4ee6279221f312081396de503bac92/src/assets/room/room3-5.jpg"
+  },
+  "room4-3": {
+    "path": "src/assets/photos/room4-3.jpg",
+    "alt": "첨성대 원룸형 온돌 객실과 침구",
+    "source_id": "A081",
+    "source_url": "https://github.com/hwayanghotel/hwayanghotel.github.io/blob/bddd10de7d4ee6279221f312081396de503bac92/src/assets/room/room4-3.jpg"
+  },
+  "room4-4": {
+    "path": "src/assets/photos/room4-4.jpg",
+    "alt": "첨성대 객실의 주방",
+    "source_id": "A082",
+    "source_url": "https://github.com/hwayanghotel/hwayanghotel.github.io/blob/bddd10de7d4ee6279221f312081396de503bac92/src/assets/room/room4-4.jpg"
+  },
+  "room4-5": {
+    "path": "src/assets/photos/room4-5.jpg",
+    "alt": "첨성대 객실의 창문",
+    "source_id": "A083",
+    "source_url": "https://github.com/hwayanghotel/hwayanghotel.github.io/blob/bddd10de7d4ee6279221f312081396de503bac92/src/assets/room/room4-5.jpg"
+  },
+  "creek-canopy": {
+    "path": "src/assets/photos/creek-canopy.jpg",
+    "alt": "녹음 사이로 보이는 화양계곡의 물과 바위",
+    "source_id": "A061",
+    "source_url": "https://github.com/hwayanghotel/hwayanghotel.github.io/blob/bddd10de7d4ee6279221f312081396de503bac92/src/assets/link-tree/linktree.jpg"
+  },
+  "valley-landscape": {
+    "path": "src/assets/photos/valley-landscape.png",
+    "alt": "화양구곡의 바위와 물, 숲 사이의 정자",
+    "source_id": "A166",
+    "source_url": "https://static.wixstatic.com/media/826ea4_92f6b8bbfef04cdc8b471953e3a2df13.png"
+  }
+}

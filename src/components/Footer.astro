@@ -1,0 +1,51 @@
+---
+import Brand from './Brand.astro';
+import Icon from './Icon.astro';
+import { site, navigation } from '../data/site';
+---
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div>
+      <Brand light />
+      <p class="footer-message">충북 괴산, 화양계곡.</p>
+    </div>
+    <div class="footer-contact">
+      <span class="eyebrow">식사 예약 · 이용 문의</span>
+      <a class="footer-phone" href={site.phoneHref}>
+        {site.phone}
+      </a>
+      <p>{site.address}</p>
+      <a class="footer-map" href={site.naverMap} target="_blank" rel="noopener noreferrer">
+        지도에서 보기
+        <Icon name="diagonal" size={15} />
+        <span class="sr-only">(새 창)</span>
+      </a>
+    </div>
+    <nav class="footer-nav" aria-label="하단 메뉴">
+      {navigation.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))}
+      <a href="/guide/">이용 안내</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <p>
+      상호 {site.name}
+      <span>대표 {site.representative}</span>
+      <span>사업자등록번호 {site.businessNumber}</span>
+    </p>
+    <p>© {new Date().getFullYear()} 능운대. All rights reserved.</p>
+  </div>
+</footer>
+<nav class="mobile-booking-bar" aria-label="빠른 예약">
+  <a href={site.phoneHref}>
+    <Icon name="phone" size={18} />
+    식사 전화 예약
+  </a>
+  <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer">
+    숙박 예약하기
+    <Icon name="diagonal" size={17} />
+    <span class="sr-only">(새 창)</span>
+  </a>
+</nav>

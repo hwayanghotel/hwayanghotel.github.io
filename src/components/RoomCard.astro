@@ -1,0 +1,38 @@
+---
+import type { Room } from '../data/site';
+import Photo from './Photo.astro';
+import Icon from './Icon.astro';
+import images from '../data/images.generated.json';
+interface Props {
+  room: Room;
+  priority?: boolean;
+}
+const { room, priority = false } = Astro.props;
+---
+
+<a class="room-card" href={`/rooms/${room.slug}/`}>
+  <div class="room-card-image">
+    <Photo
+      name={room.cover as keyof typeof images}
+      priority={priority}
+      sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1400px) 45vw, 600px"
+    />
+    <span class="room-card-count">ROOM {room.number}</span>
+    <span class="room-card-open" aria-hidden="true">
+      <Icon name="diagonal" size={24} />
+    </span>
+  </div>
+  <div class="room-card-content">
+    <div>
+      <h3>{room.name}</h3>
+      <p>
+        {room.structure}
+        <span>약 {room.pyeong}평</span>
+      </p>
+    </div>
+    <div class="room-card-people">
+      <span>기준 {room.standard}인</span>
+      <small>최대 {room.maximum}인</small>
+    </div>
+  </div>
+</a>

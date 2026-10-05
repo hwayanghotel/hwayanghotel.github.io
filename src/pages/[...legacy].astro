@@ -1,0 +1,37 @@
+---
+import { site } from '../data/site';
+
+export function getStaticPaths() {
+  // Keep the map inside the hoisted function for Astro's isolated static-path evaluation.
+  return Object.entries({
+    introduce: '/valley/',
+    '복제-능운대': '/rooms/',
+    neungundaeroom: '/rooms/neungundae/',
+    '복제-능운대-2': '/rooms/haksodae/',
+    '복제-복제-능운대-2': '/rooms/waryongam/',
+    '복제-능운대-1': '/rooms/cheomseongdae/',
+    '복제-첨성대': '/guide/',
+    service: '/dining/',
+    activity: '/valley/',
+    howtocome: '/visit/',
+  }).map(([legacy, destination]) => ({ params: { legacy }, props: { destination } }));
+}
+const { destination } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="refresh" content={`0;url=${destination}`} />
+    <meta name="robots" content="noindex,follow" />
+    <link rel="canonical" href={`${site.url}${destination}`} />
+    <title>페이지 이동 | 화양계곡 능운대펜션</title>
+  </head>
+  <body>
+    <p>
+      새 페이지로 안내합니다. <a href={destination}>능운대펜션 페이지 열기</a>
+    </p>
+  </body>
+</html>

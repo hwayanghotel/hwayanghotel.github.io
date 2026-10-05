@@ -1,0 +1,77 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../data/site';
+import '../styles/global.css';
+interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+  immersive?: boolean;
+}
+const {
+  title = '화양계곡 능운대펜션 | 계곡 곁에서 보내는 하루',
+  description = '충북 괴산 화양계곡 곁의 능운대펜션. 네 개의 온돌 객실과 식당, 계곡 산책과 오시는 길을 만나보세요. 숙박은 떠나요, 식사는 전화로 예약합니다.',
+  noindex = false,
+  immersive = false,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, site.url).href;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LodgingBusiness',
+  name: site.name,
+  url: site.url,
+  telephone: site.phone,
+  image: site.url + '/og.jpg',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '청천면 화양동길 247',
+    addressLocality: '괴산군',
+    addressRegion: '충청북도',
+    addressCountry: 'KR',
+  },
+  checkinTime: '15:00',
+  checkoutTime: '11:00',
+};
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex,follow" />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/fonts/pretendard.css" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={site.url + '/og.jpg'} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="화양계곡의 물과 바위, 푸른 숲" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\u003c')} />
+  </head>
+  <body class:list={{ immersive }}>
+    <a class="skip-link" href="#main">
+      본문으로 바로 가기
+    </a>
+    <Header />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+    <div id="copy-status" class="toast" role="status" aria-live="polite"></div>
+    <script>
+      import '../scripts/client';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Photo from '../components/Photo.astro';
+import Button from '../components/Button.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../data/site';
+---
+
+<Layout
+  title="오시는 길과 차량 안내 | 화양계곡 능운대펜션"
+  description="충청북도 괴산군 청천면 화양동길 247, 능운대펜션 오시는 길. 주소 복사와 지도 안내. 국립공원 차량 진입과 주차는 방문 전 043-832-4281로 문의해 주세요."
+>
+  <div class="container page-bottom">
+    <nav class="breadcrumbs" aria-label="현재 위치">
+      <a href="/">홈</a>
+      <span>/</span>
+      <span>오시는 길</span>
+    </nav>
+    <header class="page-heading">
+      <span class="eyebrow">GETTING HERE</span>
+      <h1>능운대로 오시는 길.</h1>
+      <p>
+        화양계곡 곁, 초록 지붕 아래에서 기다립니다.
+        <br />
+        차량으로 오신다면 출발 전에 연락해 주세요.
+      </p>
+    </header>
+    <section class="visit-grid" aria-label="주소와 지도">
+      <div class="visit-photo">
+        <Photo name="exterior" priority sizes="(max-width:800px) 95vw, 50vw" />
+      </div>
+      <div class="visit-card">
+        <span class="eyebrow">화양계곡 능운대펜션</span>
+        <h2>주소와 지도</h2>
+        <p class="address-line" data-address>
+          {site.address}
+        </p>
+        <button class="copy-button" type="button" data-copy={site.address} hidden>
+          <Icon name="copy" size={17} />
+          주소 복사하기
+        </button>
+        <div class="map-buttons">
+          <Button href={site.naverMap} variant="primary" external icon="diagonal">
+            네이버 지도
+          </Button>
+          <Button href={site.kakaoMap} variant="outline" external icon="diagonal">
+            카카오맵
+          </Button>
+        </div>
+        <p class="fine-print">
+          지도에서 ‘화양계곡 능운대펜션’을 검색해 주세요.
+          <br />
+          국립공원 차량 진입은 사전 안내가 필요합니다.
+        </p>
+        <div class="visit-call">
+          <span>방문 · 주차 문의</span>
+          <a href={site.phoneHref}>{site.phone}</a>
+        </div>
+      </div>
+    </section>
+    <section class="arrival-steps" aria-labelledby="arrival-heading">
+      <span class="section-label">차량으로 오신다면</span>
+      <h2 id="arrival-heading">출발 전에 알아두세요.</h2>
+      <div class="steps">
+        <article class="step">
+          <span class="step-number">01 · 출발 전</span>
+          <h3>전화로 방문을 알려주세요.</h3>
+          <p>
+            방문 날짜와 도착 예정 시간을 말씀해 주세요. 차량 진입에 필요한 정보를 안내해 드립니다.
+          </p>
+        </article>
+        <article class="step">
+          <span class="step-number">02 · 공원 진입</span>
+          <h3>안내받은 절차를 따라주세요.</h3>
+          <p>
+            국립공원 안에 위치해 일반 차량 진입이 제한될 수 있습니다. 미리 안내받은 방법과 현장
+            안내에 따라 이동해 주세요.
+          </p>
+        </article>
+        <article class="step">
+          <span class="step-number">03 · 능운대 도착</span>
+          <h3>주차 위치를 안내해 드려요.</h3>
+          <p>
+            펜션에 도착하시면 주차 위치를 확인해 주세요. 길을 찾기 어려우시면 편하게 전화 주세요.
+          </p>
+        </article>
+      </div>
+    </section>
+    <div class="notice-box visit-note">
+      <Icon name="phone" size={22} />
+      <div>
+        <strong>대중교통으로 방문하시나요?</strong>
+        <p>
+          출발지에 따라 이동 방법이 달라질 수 있습니다. 최신 대중교통 경로를 지도에서 확인하시고,
+          마지막 도착 구간이 궁금하면 펜션으로 문의해 주세요.
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>

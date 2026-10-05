@@ -1,0 +1,11 @@
+# For static hosts supporting Netlify-style redirects. Other hosts use compatibility HTML.
+/introduce /valley/ 301
+/복제-능운대 /rooms/ 301
+/neungundaeroom /rooms/neungundae/ 301
+/복제-능운대-2 /rooms/haksodae/ 301
+/복제-복제-능운대-2 /rooms/waryongam/ 301
+/복제-능운대-1 /rooms/cheomseongdae/ 301
+/복제-첨성대 /guide/ 301
+/service /dining/ 301
+/activity /valley/ 301
+/howtocome /visit/ 301

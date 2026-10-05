@@ -1,0 +1,80 @@
+---
+import Photo from './Photo.astro';
+import Icon from './Icon.astro';
+import images from '../data/images.generated.json';
+interface Props {
+  photos: string[];
+  name: string;
+}
+const { photos, name } = Astro.props;
+const items = photos.map((key) => {
+  const image = images[key as keyof typeof images];
+  return { key, alt: image.alt, src: `/images/${key}-${image.widths.at(-1)}.webp` };
+});
+---
+
+<section
+  class="gallery"
+  aria-label={`${name} 객실 사진`}
+  data-gallery
+  data-items={JSON.stringify(items)}
+>
+  <a
+    class="gallery-hero gallery-trigger"
+    href={items[0].src}
+    data-index="0"
+    aria-label={`${name} 객실 사진 크게 보기`}
+  >
+    <Photo
+      name={items[0].key as keyof typeof images}
+      priority
+      sizes="(max-width: 1000px) 100vw, 740px"
+    />
+    <span class="gallery-expand">
+      <Icon name="expand" size={18} />
+      사진 크게 보기<span class="gallery-total">{items.length}장</span>
+    </span>
+  </a>
+  <div class="gallery-thumbs">
+    {items.map((item, i) => (
+      <a
+        href={item.src}
+        class="gallery-trigger"
+        data-index={i}
+        aria-label={`${i + 1}번째 사진 크게 보기: ${item.alt}`}
+      >
+        <Photo name={item.key as keyof typeof images} sizes="180px" />
+      </a>
+    ))}
+  </div>
+  <dialog class="photo-dialog" aria-label={`${name} 객실 사진 확대`}>
+    <div class="dialog-bar">
+      <span>
+        {name} 객실 <span data-gallery-count aria-live="polite"></span>
+      </span>
+      <button type="button" class="icon-button" data-gallery-close aria-label="사진 닫기">
+        <Icon name="close" size={25} />
+      </button>
+    </div>
+    <div class="dialog-view">
+      <button
+        type="button"
+        class="gallery-prev icon-button"
+        data-gallery-prev
+        aria-label="이전 사진"
+      >
+        <Icon name="chevron" size={25} />
+      </button>
+      <img data-gallery-image alt="" />
+      <button
+        type="button"
+        class="gallery-next icon-button"
+        data-gallery-next
+        aria-label="다음 사진"
+      >
+        <Icon name="chevron" size={25} />
+      </button>
+    </div>
+    <p class="dialog-caption" data-gallery-caption></p>
+  </dialog>
+</section>

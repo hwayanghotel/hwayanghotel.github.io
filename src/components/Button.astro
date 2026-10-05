@@ -1,0 +1,30 @@
+---
+import Icon from './Icon.astro';
+interface Props {
+  href: string;
+  variant?: 'primary' | 'outline' | 'light' | 'text';
+  icon?: string;
+  external?: boolean;
+  class?: string;
+}
+const {
+  href,
+  variant = 'primary',
+  icon = 'arrow',
+  external = false,
+  class: className = '',
+} = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={['button', `button--${variant}`, className]}
+  target={external ? '_blank' : undefined}
+  rel={external ? 'noopener noreferrer' : undefined}
+>
+  <span>
+    <slot />
+  </span>
+  <Icon name={icon} size={18} />
+  {external && <span class="sr-only">(새 창)</span>}
+</a>

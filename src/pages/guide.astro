@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import Button from '../components/Button.astro';
+import Faq from '../components/Faq.astro';
+import { site } from '../data/site';
+---
+
+<Layout
+  title="이용 안내와 자주 묻는 질문 | 화양계곡 능운대펜션"
+  description="능운대펜션 입실 오후 3시, 퇴실 오전 11시. 숙박은 떠나요, 식사는 전화로 예약합니다. 인원 추가, 바비큐, 차량 방문과 예약 변경 안내를 확인하세요."
+>
+  <div class="container page-bottom">
+    <nav class="breadcrumbs" aria-label="현재 위치">
+      <a href="/">홈</a>
+      <span>/</span>
+      <span>이용 안내</span>
+    </nav>
+    <header class="page-heading">
+      <span class="eyebrow">INFORMATION</span>
+      <h1>예약과 이용 안내.</h1>
+      <p>
+        예약부터 도착까지 필요한 안내를 모았습니다.
+        <br />
+        궁금한 점은 {site.phone}로 편하게 문의해 주세요.
+      </p>
+    </header>
+    <div class="guide-layout">
+      <nav class="guide-nav" aria-label="이용 안내 항목">
+        <a href="#booking">
+          예약 안내
+          <Icon name="arrow" size={15} />
+        </a>
+        <a href="#checkin">
+          입실과 퇴실
+          <Icon name="arrow" size={15} />
+        </a>
+        <a href="#facilities">
+          객실과 시설
+          <Icon name="arrow" size={15} />
+        </a>
+        <a href="#arrival">
+          차량 방문
+          <Icon name="arrow" size={15} />
+        </a>
+        <a href="#questions">
+          자주 묻는 질문
+          <Icon name="arrow" size={15} />
+        </a>
+      </nav>
+      <div>
+        <section class="guide-block" id="booking">
+          <span class="section-label">01 · 예약</span>
+          <h2>숙박은 떠나요, 식사는 전화로.</h2>
+          <p>
+            숙박은 떠나요 예약 페이지에서 날짜를 선택하고 요금과 예약 가능 여부를 확인해 주세요.
+            식사는 전화로 방문 날짜와 시간, 인원, 메뉴를 말씀해 주시면 안내해 드립니다.
+          </p>
+          <div class="button-row">
+            <Button href={site.bookingUrl} external icon="diagonal">
+              숙박 예약하기
+            </Button>
+            <Button href={site.phoneHref} variant="outline" icon="phone">
+              식사 전화 예약
+            </Button>
+          </div>
+          <div class="notice-box guide-small">
+            <div>
+              <strong>예약 변경과 취소</strong>
+              <p>
+                숙박 예약의 결제·변경·취소와 환불 기준은 예약하신 떠나요 페이지의 안내를 확인해
+                주세요. 날짜와 상품에 따라 이용 조건이 달라질 수 있습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="guide-block" id="checkin">
+          <span class="section-label">02 · 머무는 시간</span>
+          <h2>입실과 퇴실 시간</h2>
+          <div class="time-grid">
+            <div>
+              <span>입실 · 오후 3시</span>
+              <strong>15:00</strong>
+            </div>
+            <div>
+              <span>퇴실 · 오전 11시</span>
+              <strong>11:00</strong>
+            </div>
+          </div>
+          <p>
+            늦게 도착하시는 경우 미리 전화해 주세요. 다음 손님의 편안한 입실을 위해 퇴실 시간을
+            지켜주시면 감사하겠습니다.
+          </p>
+        </section>
+        <section class="guide-block" id="facilities">
+          <span class="section-label">03 · 객실과 시설</span>
+          <h2>객실과 시설 이용</h2>
+          <ul class="detail-list">
+            <li>
+              <strong>객실 인원</strong>
+              <span>
+                객실별 기준·최대 인원이 다릅니다. 유아·어린이의 인원 포함 기준과 추가 요금은 예약
+                페이지에서 확인해 주세요.
+              </span>
+            </li>
+            <li>
+              <strong>객실 구성</strong>
+              <span>
+                네 객실 모두 온돌 객실입니다. 방마다 크기와 구조가 다르니 객실 사진과 안내를 확인해
+                주세요.
+              </span>
+            </li>
+            <li>
+              <strong>바비큐</strong>
+              <span>이용 가능 여부, 준비 비용과 이용 시간은 방문 전에 전화로 문의해 주세요.</span>
+            </li>
+            <li>
+              <strong>계곡 이용</strong>
+              <span>
+                날씨와 현장 통제에 따라 이용이 달라집니다. 방문일의 기상과 현장 안내를 확인해
+                주세요.
+              </span>
+            </li>
+          </ul>
+          <a class="text-link" style="margin-top:20px" href="/rooms/">
+            객실 비교하기
+            <Icon name="arrow" size={16} />
+          </a>
+        </section>
+        <section class="guide-block" id="arrival">
+          <span class="section-label">04 · 차량 방문</span>
+          <h2>출발 전에 한 번 더 확인해 주세요.</h2>
+          <p>
+            능운대는 국립공원 안에 있습니다. 차량으로 오시는 경우 방문 전에 전화로 차량 진입과 주차
+            방법을 안내받아 주세요.
+          </p>
+          <a class="text-link" style="margin-top:20px" href="/visit/">
+            주소와 오시는 길<Icon name="arrow" size={16} />
+          </a>
+        </section>
+        <section id="questions">
+          <span class="section-label">05 · 자주 묻는 질문</span>
+          <h2 style="font-size:29px;margin-bottom:27px">자주 묻는 질문</h2>
+          <Faq />
+        </section>
+      </div>
+    </div>
+  </div>
+</Layout>
